@@ -15,13 +15,22 @@ const HeaderTop = styled.div`
   height: 5px;
   display: flex;
   height: 45px;
-  justify-content: space-between;
+  align-items: center;
+  div:nth-child(1) {
+    flex-basis: 60%;
+  }
+  div:nth-child(2),
+  div:nth-child(3) {
+    background-color: yellow;
+    flex-basis: 20%;
+  }
 `;
 
 const HeaderNav = styled.nav`
   background-color: #128c7e;
   height: 35px;
   display: flex;
+  align-items: center;
   border: 1px solid yellow;
   justify-content: space-around;
   color: white;
