@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const StyledListItem = styled.a`
   background: white;
-  padding: 15px;
+  padding: 5px;
   border-bottom: 1px solid lightgrey;
   display: flex;
   &:active {
@@ -14,6 +14,7 @@ const StyledListItem = styled.a`
 `;
 
 const ChatAvatar = styled.div`
+  padding: 10px;
   flex-basis: 15%;
   /* border: 1px solid blue; */
   img {
@@ -22,7 +23,7 @@ const ChatAvatar = styled.div`
 `;
 
 const ChatTitle = styled.div`
-  padding: 10px;
+  padding: 15px 10px 10px 10px;
   flex-basis: 70%;
   font-size: 1.1em;
   /* border: 1px solid green; */
@@ -34,6 +35,7 @@ const ChatTitle = styled.div`
 `;
 
 const ChatMeta = styled.div`
+  padding: 15px 10px 10px 10px;
   flex-basis: 15%;
   color: grey;
   /* border: 1px solid purple; */
@@ -50,7 +52,7 @@ const ChatListItem = () => {
         This is the chat title <br />
         <span>preview text here</span>
       </ChatTitle>
-      <ChatMeta>meta data</ChatMeta>
+      <ChatMeta>meta</ChatMeta>
     </StyledListItem>
   );
 };
