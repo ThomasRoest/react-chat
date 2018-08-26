@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const StyledListItem = styled.a`
   background: white;
-
+  padding: 15px;
   border-bottom: 1px solid lightgrey;
   display: flex;
   &:active {
@@ -15,14 +15,17 @@ const StyledListItem = styled.a`
 
 const ChatAvatar = styled.div`
   flex-basis: 15%;
-  border: 1px solid blue;
-  background-image: url("https://www.placecage.com/50/50");
+  /* border: 1px solid blue; */
+  img {
+    border-radius: 50%;
+  }
 `;
 
 const ChatTitle = styled.div`
   padding: 10px;
   flex-basis: 70%;
-  border: 1px solid green;
+  font-size: 1.1em;
+  /* border: 1px solid green; */
   font-weight: bold;
   span {
     color: grey;
@@ -32,14 +35,17 @@ const ChatTitle = styled.div`
 
 const ChatMeta = styled.div`
   flex-basis: 15%;
-  border: 1px solid purple;
+  color: grey;
+  /* border: 1px solid purple; */
   flex-grow: 1;
 `;
 
 const ChatListItem = () => {
   return (
     <StyledListItem>
-      <ChatAvatar />
+      <ChatAvatar>
+        <img src="https://www.placecage.com/60/60" alt="" />
+      </ChatAvatar>
       <ChatTitle>
         This is the chat title <br />
         <span>preview text here</span>

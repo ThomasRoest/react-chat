@@ -14,7 +14,7 @@ const HeaderTop = styled.div`
   background-color: #128c7e;
   height: 5px;
   display: flex;
-  height: 45px;
+  height: 60px;
   align-items: center;
   div:nth-child(1) {
     flex-basis: 60%;
@@ -28,7 +28,7 @@ const HeaderTop = styled.div`
 
 const HeaderNav = styled.nav`
   background-color: #128c7e;
-  height: 35px;
+  height: 45px;
   display: flex;
   align-items: center;
   border: 1px solid yellow;

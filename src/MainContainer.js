@@ -7,7 +7,7 @@ import ChatList from "./ChatList";
 const Main = styled.main`
   background: lightgray;
   height: 100vh;
-  margin-top: 80px;
+  margin-top: 105px;
 `;
 
 const MainContainer = () => {
