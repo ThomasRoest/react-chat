@@ -15,12 +15,17 @@ const HeaderTop = styled.div`
   display: flex;
   height: 60px;
   align-items: center;
+  div h1 {
+    color: white;
+    font-size: 1.5em;
+    padding-left: 15px;
+  }
   div:nth-child(1) {
     flex-basis: 60%;
   }
   div:nth-child(2),
   div:nth-child(3) {
-    background-color: yellow;
+    /* background-color: yellow; */
     flex-basis: 20%;
   }
 `;
@@ -30,7 +35,6 @@ const HeaderNav = styled.nav`
   height: 45px;
   display: flex;
   align-items: center;
-  border: 1px solid yellow;
   justify-content: space-around;
   color: white;
   text-transform: uppercase;
@@ -41,7 +45,9 @@ const HeaderNav = styled.nav`
 const MainHeaderTop = () => {
   return (
     <HeaderTop>
-      <div>title</div>
+      <div>
+        <h1>Whaddup</h1>
+      </div>
       <div>search</div>
       <div>settings</div>
     </HeaderTop>
@@ -51,6 +57,7 @@ const MainHeaderTop = () => {
 const MainHeaderNav = () => {
   return (
     <HeaderNav>
+      <div>Ic</div>
       <div>Chats</div>
       <div>Status</div>
       <div>Oproepen</div>
