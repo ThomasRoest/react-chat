@@ -4,14 +4,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Header = styled.header`
-  background-color: #128c7e;
   position: fixed;
   width: 100%;
   top: 0;
 `;
 
 const HeaderTop = styled.div`
-  background-color: #128c7e;
+  background-color: #075e54;
   height: 5px;
   display: flex;
   height: 60px;
@@ -27,7 +26,7 @@ const HeaderTop = styled.div`
 `;
 
 const HeaderNav = styled.nav`
-  background-color: #128c7e;
+  background-color: #075e54;
   height: 45px;
   display: flex;
   align-items: center;
@@ -36,6 +35,7 @@ const HeaderNav = styled.nav`
   color: white;
   text-transform: uppercase;
   margin: 0;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
 `;
 
 const MainHeaderTop = () => {
