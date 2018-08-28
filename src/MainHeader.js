@@ -32,6 +32,7 @@ const HeaderTop = styled.div`
 
 const HeaderNav = styled.nav`
   background-color: #075e54;
+  font-weight: bold;
   height: 45px;
   display: flex;
   align-items: center;
