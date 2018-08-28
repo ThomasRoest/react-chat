@@ -17,6 +17,7 @@ const HeaderTop = styled.div`
   align-items: center;
   div h1 {
     color: white;
+    font-weight: 500;
     font-size: 1.5em;
     padding-left: 15px;
   }
@@ -25,22 +26,29 @@ const HeaderTop = styled.div`
   }
   div:nth-child(2),
   div:nth-child(3) {
-    /* background-color: yellow; */
     flex-basis: 20%;
   }
 `;
 
 const HeaderNav = styled.nav`
   background-color: #075e54;
-  font-weight: bold;
+  font-size: 0.9em;
+  font-weight: 700;
   height: 45px;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   color: white;
   text-transform: uppercase;
   margin: 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+  a {
+    flex-grow: 1;
+    text-align: center;
+    padding-top: 12px;
+  }
+  a:active {
+    background-color: lightgray;
+  }
 `;
 
 const MainHeaderTop = () => {
@@ -58,10 +66,10 @@ const MainHeaderTop = () => {
 const MainHeaderNav = () => {
   return (
     <HeaderNav>
-      <div>Ic</div>
-      <div>Chats</div>
-      <div>Status</div>
-      <div>Oproepen</div>
+      <a>Ic</a>
+      <a>Chats</a>
+      <a>Status</a>
+      <a>Oproepen</a>
     </HeaderNav>
   );
 };
