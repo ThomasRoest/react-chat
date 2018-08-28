@@ -29,7 +29,7 @@ const ChatTitle = styled.div`
   font-size: 1.1em;
   h3 {
     font-size: 1em;
-    /* font-weight: 700; */
+    font-weight: 500;
     margin: 0;
   }
   span {
