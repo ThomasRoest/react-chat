@@ -6,7 +6,7 @@ import styled from "styled-components";
 const StyledListItem = styled.a`
   background: white;
   border-bottom: 1px solid #e4e4e4;
-  padding: 10px;
+  padding: 15px;
   display: flex;
   align-items: center;
   &:active {
@@ -29,6 +29,7 @@ const ListItemContent = styled.div`
 const ContentTopRow = styled.div`
   display: flex;
   justify-content: space-between;
+  padding-bottom: 5px;
   h4 {
     margin: 0;
     font-weight: 500;
@@ -42,6 +43,9 @@ const ContentTopRow = styled.div`
 const ContentBottomRow = styled.div`
   display: flex;
   justify-content: space-between;
+  span:first-child {
+    font-size: 0.9em;
+  }
   span {
     color: grey;
   }
