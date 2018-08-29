@@ -2,6 +2,7 @@
 
 import React from "react";
 import styled from "styled-components";
+import search from "./images/search.svg";
 
 const Header = styled.header`
   position: fixed;
@@ -18,7 +19,7 @@ const HeaderTop = styled.div`
   div h1 {
     color: white;
     font-weight: 500;
-    font-size: 1.5em;
+    font-size: 1.4em;
     padding-left: 15px;
   }
   div:nth-child(1) {
@@ -28,12 +29,17 @@ const HeaderTop = styled.div`
   div:nth-child(3) {
     flex-basis: 20%;
   }
+  div img {
+    height: 20px;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const HeaderNav = styled.nav`
   background-color: #075e54;
   font-size: 0.9em;
-  font-weight: 700;
+  font-weight: 600;
   height: 45px;
   display: flex;
   justify-content: space-between;
@@ -57,7 +63,9 @@ const MainHeaderTop = () => {
       <div>
         <h1>Whaddup</h1>
       </div>
-      <div>search</div>
+      <div>
+        <img src={search} alt="logo" />
+      </div>
       <div>settings</div>
     </HeaderTop>
   );

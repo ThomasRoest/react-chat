@@ -23,13 +23,13 @@ const ListItemAvatar = styled.div`
 
 const ListItemContent = styled.div`
   flex-basis: 85%;
-  padding-left: 10px;
+  padding-left: 13px;
 `;
 
 const ContentTopRow = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-bottom: 5px;
+  padding-bottom: 3px;
   h4 {
     margin: 0;
     font-weight: 500;
@@ -37,7 +37,7 @@ const ContentTopRow = styled.div`
   }
   span {
     color: gray;
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 `;
 const ContentBottomRow = styled.div`
@@ -48,6 +48,7 @@ const ContentBottomRow = styled.div`
   }
   span {
     color: grey;
+    font-size: 0.8em;
   }
 `;
 
