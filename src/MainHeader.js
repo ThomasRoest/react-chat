@@ -25,8 +25,7 @@ const HeaderTop = styled.div`
   div:nth-child(1) {
     flex-basis: 60%;
   }
-  div:nth-child(2),
-  div:nth-child(3) {
+  div:nth-child(2) {
     flex-basis: 20%;
   }
   div img {
@@ -36,12 +35,29 @@ const HeaderTop = styled.div`
   }
 `;
 
+const SettingsIcon = styled.div`
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  span {
+    align-self: flex-end;
+    width: 5px;
+    height: 5px;
+    margin: 2px;
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+  }
+`;
+
 const HeaderNav = styled.nav`
   background-color: #075e54;
   font-size: 0.8em;
-  font-weight: 500;
+  font-weight: 600;
   height: 45px;
   display: flex;
+  letter-spacing: 0.7px;
   justify-content: space-between;
   color: white;
   text-transform: uppercase;
@@ -51,9 +67,12 @@ const HeaderNav = styled.nav`
     flex-grow: 1;
     text-align: center;
     padding-top: 12px;
+    transition: background-color 0.4s;
   }
   a:active {
     background-color: lightgray;
+    transition: background-color 0.4s;
+    border-bottom: 3px solid white;
   }
 `;
 
@@ -63,10 +82,12 @@ const MainHeaderTop = () => {
       <div>
         <h1>Whaddup</h1>
       </div>
-      <div>
-        <img src={search} alt="logo" />
-      </div>
-      <div>settings</div>
+      <div>{/* <img src={search} alt="logo" /> */}</div>
+      <SettingsIcon>
+        <span />
+        <span />
+        <span />
+      </SettingsIcon>
     </HeaderTop>
   );
 };

@@ -6,7 +6,7 @@ import styled from "styled-components";
 const StyledListItem = styled.a`
   background: white;
   border-bottom: 1px solid #e4e4e4;
-  padding: 13px 15px 13px 15px;
+  padding: 12px 15px 12px 15px;
   display: flex;
   align-items: center;
   &:active {
