@@ -23,10 +23,10 @@ const HeaderTop = styled.div`
     padding-left: 15px;
   }
   div:nth-child(1) {
-    flex-basis: 60%;
+    flex-basis: 90%;
   }
   div:nth-child(2) {
-    flex-basis: 20%;
+    flex-basis: 10%;
   }
   div img {
     height: 20px;
@@ -36,7 +36,7 @@ const HeaderTop = styled.div`
 `;
 
 const SettingsIcon = styled.div`
-  flex-basis: 20%;
+  flex-basis: 10%;
   display: flex;
   flex-direction: column;
   padding-right: 20px;
@@ -82,7 +82,9 @@ const MainHeaderTop = () => {
       <div>
         <h1>Whaddup</h1>
       </div>
-      <div>{/* <img src={search} alt="logo" /> */}</div>
+      <div>
+        <img src={search} alt="search" />
+      </div>
       <SettingsIcon>
         <span />
         <span />
