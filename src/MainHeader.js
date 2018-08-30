@@ -68,11 +68,11 @@ const HeaderNav = styled.nav`
     flex-grow: 1;
     text-align: center;
     padding-top: 12px;
-    transition: background-color 0.4s;
+    transition: background-color 1.5s;
   }
   a:active {
     background-color: lightgray;
-    transition: background-color 0.4s;
+    transition: background-color 1.5s;
     border-bottom: 3px solid white;
   }
 `;

@@ -29,7 +29,7 @@ const ListItemContent = styled.div`
 const ContentTopRow = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-bottom: 3px;
+  padding-bottom: 4.5px;
   h4 {
     margin: 0;
     font-weight: 500;
