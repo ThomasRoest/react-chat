@@ -19,7 +19,7 @@ const HeaderTop = styled.div`
   div h1 {
     color: white;
     font-weight: 500;
-    font-size: 1.4em;
+    font-size: 1.3em;
     padding-left: 15px;
   }
   div:nth-child(1) {
@@ -38,8 +38,8 @@ const HeaderTop = styled.div`
 
 const HeaderNav = styled.nav`
   background-color: #075e54;
-  font-size: 0.9em;
-  font-weight: 600;
+  font-size: 0.8em;
+  font-weight: 500;
   height: 45px;
   display: flex;
   justify-content: space-between;
