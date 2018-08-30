@@ -20,18 +20,19 @@ const HeaderTop = styled.div`
     color: white;
     font-weight: 500;
     font-size: 1.3em;
-    padding-left: 15px;
+    padding-left: 17px;
   }
   div:nth-child(1) {
     flex-basis: 90%;
   }
-  div:nth-child(2) {
-    flex-basis: 10%;
-  }
-  div img {
-    height: 20px;
+`;
+
+const SearchIcon = styled.div`
+  flex-basis: 10%;
+  img {
     margin: 0;
     padding: 0;
+    height: 17px;
   }
 `;
 
@@ -42,9 +43,9 @@ const SettingsIcon = styled.div`
   padding-right: 20px;
   span {
     align-self: flex-end;
-    width: 5px;
-    height: 5px;
-    margin: 2px;
+    width: 4px;
+    height: 4px;
+    margin: 1px;
     background: #fff;
     border-radius: 50%;
     display: block;
@@ -57,7 +58,7 @@ const HeaderNav = styled.nav`
   font-weight: 500;
   height: 45px;
   display: flex;
-  letter-spacing: 0.7px;
+  letter-spacing: 0.4px;
   justify-content: space-between;
   color: white;
   text-transform: uppercase;
@@ -82,9 +83,9 @@ const MainHeaderTop = () => {
       <div>
         <h1>Whaddup</h1>
       </div>
-      <div>
+      <SearchIcon>
         <img src={search} alt="search" />
-      </div>
+      </SearchIcon>
       <SettingsIcon>
         <span />
         <span />
