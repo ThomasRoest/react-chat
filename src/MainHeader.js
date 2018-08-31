@@ -55,7 +55,7 @@ const SettingsIcon = styled.div`
 const HeaderNav = styled.nav`
   background-color: #075e54;
   font-size: 0.8em;
-  font-weight: 500;
+  font-weight: 600;
   height: 45px;
   display: flex;
   letter-spacing: 0.4px;

@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledListItem = styled.a`
-  background: white;
+  background: #fafafa;
   border-bottom: 1px solid #e4e4e4;
   padding: 12px 15px 12px 15px;
   display: flex;
@@ -32,12 +32,13 @@ const ContentTopRow = styled.div`
   padding-bottom: 4.5px;
   h4 {
     margin: 0;
+    color: #202020;
     font-weight: 500;
     font-size: 1.1em;
   }
   span {
     color: gray;
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
 `;
 const ContentBottomRow = styled.div`
@@ -47,7 +48,7 @@ const ContentBottomRow = styled.div`
     font-size: 0.9em;
   }
   span {
-    color: grey;
+    color: #737373;
     font-size: 0.8em;
   }
 `;
