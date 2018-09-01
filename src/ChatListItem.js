@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 const StyledListItem = styled.a`
   background: #fafafa;
-  border-bottom: 1px solid #e4e4e4;
-  padding: 12px 15px 12px 15px;
+
+  /* padding: 12px 15px 12px 15px; */
   display: flex;
   align-items: center;
   &:active {
@@ -15,15 +15,21 @@ const StyledListItem = styled.a`
 `;
 
 const ListItemAvatar = styled.div`
-  flex-basis: 15%;
+  flex-basis: 20%;
+  padding-left: 10px;
+  padding-top: 5px;
+  /* padding: 12px 0px 12px 15px; */
   img {
+    /* height: 10px; */
     border-radius: 50%;
   }
 `;
 
 const ListItemContent = styled.div`
-  flex-basis: 85%;
+  flex-basis: 80%;
+  border-bottom: 1px solid #e4e4e4;
   padding-left: 13px;
+  padding: 12px 15px 12px 0px;
 `;
 
 const ContentTopRow = styled.div`
