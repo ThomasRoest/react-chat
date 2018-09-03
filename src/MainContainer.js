@@ -3,6 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import ChatList from "./ChatList";
+import MainCarousel from "./MainCarousel";
 
 const Main = styled.main`
   background: lightgray;
@@ -13,7 +14,8 @@ const Main = styled.main`
 const MainContainer = () => {
   return (
     <Main>
-      <ChatList />
+      {/* <ChatList /> */}
+      <MainCarousel />
     </Main>
   );
 };
