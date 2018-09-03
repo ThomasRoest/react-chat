@@ -16,8 +16,8 @@ const StyledListItem = styled.a`
 
 const ListItemAvatar = styled.div`
   flex-basis: 20%;
-  padding-left: 10px;
-  padding-top: 10px;
+  padding-left: 15px;
+  /* padding-top: 10px; */
   /* padding-bottom: 15px; */
   /* padding: 12px 0px 12px 15px; */
   img {
@@ -30,7 +30,7 @@ const ListItemContent = styled.div`
   flex-basis: 80%;
   border-bottom: 1px solid #e4e4e4;
   padding-left: 13px;
-  padding: 15px 15px 15px 0px;
+  padding: 17px 15px 17px 0px;
 `;
 
 const ContentTopRow = styled.div`
