@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:900");
 
 .carousel {
-  min-height: 400px;
+  min-height: 100vh;
   min-width: 200px;
   /* width: 400px; */
   overflow: hidden;
@@ -212,37 +212,38 @@
 /**
   * Theming
 */
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
-html,
+/* html,
 body {
   background-color: #111;
   font-family: "Roboto", sans-serif;
   text-align: center;
   color: #fff;
-}
+} */
 
-.carousel-container {
+/* .carousel-container {
   display: inline-block;
-}
+} */
 
-.my-carousel {
+/* .my-carousel {
   border-radius: 5px;
   margin: 30px;
-}
+} */
 
 .carousel__slide {
-  overflow: hidden;
+  /* overflow */
+  /* overflow: hidden; */
 }
 
 .carousel--thumb .carousel__indicator {
-  height: 30px;
-  width: 30px;
+  /* height: 30px; */
+  /* width: 30px; */
 }
 
-h1 {
+/* h1 {
   font-size: 50px;
   line-height: 50px;
   color: #fafafa;
@@ -260,8 +261,8 @@ h3 {
 
 h3 {
   font-size: 50px;
-}
+} */
 
-.carousel__indicator {
+/* .carousel__indicator {
   background-color: #fafafa;
-}
+} */

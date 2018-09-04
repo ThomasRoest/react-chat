@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import "./carousel.css";
+import ChatList from "./ChatList";
 
 class MainCarousel extends Component {
   state = {
-    viewState: "test",
-    trackClass: ""
+    trackClass: "carousel__track carousel__track slide1"
   };
 
   moveToSlide = event => {
     event.preventDefault();
     console.log("moving to slide....");
     const num = event.target.dataset.slide;
+    // add to redux here?
+
     const trackClass = `carousel__track carousel__track slide${num}`;
 
     this.setState({ trackClass: trackClass });
@@ -20,7 +22,6 @@ class MainCarousel extends Component {
   render() {
     return (
       <div className="carousel-container">
-        <h2>slider</h2>
         <div className="js-controls">
           <a
             onClick={this.moveToSlide}
@@ -54,25 +55,11 @@ class MainCarousel extends Component {
           >
             slide 4
           </a>
-          <a
-            onClick={this.moveToSlide}
-            className="js-select"
-            data-slide="5"
-            href="#well then"
-          >
-            slide 5
-          </a>
         </div>
         <div className="carousel my-carousel carousel--translate">
           <div className={this.state.trackClass}>
             <li className="carousel__slide">
-              <ul className="testinglist">
-                <li>hello there</li>
-                <li className="wllwewe ">testing</li>
-                <li className="wllwewe ">this is a list</li>
-                <li className="wllwewe ">pretty cool</li>
-                <li className="wllwewe " />
-              </ul>
+              <ChatList />
             </li>
             <li className="carousel__slide ">
               <h1>G</h1>
@@ -87,18 +74,8 @@ class MainCarousel extends Component {
               </ul>
             </li>
             <li className="carousel__slide ">
-              <h1>I</h1>
+              <ChatList />
             </li>
-            <li className="carousel__slide ">
-              <h1>J</h1>
-            </li>
-          </div>
-          <div className="carousel__indicators ">
-            <label className="carousel__indicator " for="F " />
-            <label className="carousel__indicator " for="G " />
-            <label className="carousel__indicator " for="H " />
-            <label className="carousel__indicator " for="I " />
-            <label className="carousel__indicator " for="J " />
           </div>
         </div>
       </div>
