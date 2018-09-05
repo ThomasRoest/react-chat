@@ -11,11 +11,14 @@ const Main = styled.main`
   margin-top: 105px;
 `;
 
-const MainContainer = () => {
+type Props = {
+  viewState: string
+};
+
+const MainContainer = ({ viewState }: Props) => {
   return (
     <Main>
-      {/* <ChatList /> */}
-      <MainCarousel />
+      <MainCarousel viewState={viewState} />
     </Main>
   );
 };

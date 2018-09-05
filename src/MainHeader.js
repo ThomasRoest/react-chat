@@ -8,6 +8,7 @@ const Header = styled.header`
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 1;
 `;
 
 const HeaderTop = styled.div`
@@ -77,40 +78,36 @@ const HeaderNav = styled.nav`
   }
 `;
 
-const MainHeaderTop = () => {
-  return (
-    <HeaderTop>
-      <div>
-        <h1>Whaddup</h1>
-      </div>
-      <SearchIcon>
-        <img src={search} alt="search" />
-      </SearchIcon>
-      <SettingsIcon>
-        <span />
-        <span />
-        <span />
-      </SettingsIcon>
-    </HeaderTop>
-  );
-};
-
-const MainHeaderNav = () => {
-  return (
-    <HeaderNav>
-      <a>Ic</a>
-      <a>Chats</a>
-      <a>Status</a>
-      <a>Oproepen</a>
-    </HeaderNav>
-  );
-};
-
-const MainHeader = () => {
+const MainHeader = ({ changeViewState }) => {
   return (
     <Header>
-      <MainHeaderTop />
-      <MainHeaderNav />
+      <HeaderTop>
+        <div>
+          <h1>Whaddup</h1>
+        </div>
+        <SearchIcon>
+          <img src={search} alt="search" />
+        </SearchIcon>
+        <SettingsIcon>
+          <span />
+          <span />
+          <span />
+        </SettingsIcon>
+      </HeaderTop>
+      <HeaderNav>
+        <a data-nav="1" onClick={e => changeViewState(e)}>
+          Ic
+        </a>
+        <a data-nav="2" onClick={changeViewState}>
+          Chats
+        </a>
+        <a data-nav="3" onClick={changeViewState}>
+          Status
+        </a>
+        <a data-nav="4" onClick={changeViewState}>
+          Oproepen
+        </a>
+      </HeaderNav>
     </Header>
   );
 };
