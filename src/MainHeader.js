@@ -70,7 +70,7 @@ const HeaderNav = styled.nav`
     flex-grow: 1;
     text-align: center;
     padding-top: 12px;
-    transition: background-color 2s;
+    transition: background-color 1.5s;
     /* color: ${props => (props.primary ? "blue" : "red")}; */
     img {
       color: white;
@@ -78,8 +78,8 @@ const HeaderNav = styled.nav`
   }
   a:active {
     background-color: lightgray;
-    transition: background-color 2s;
-    /* border-bottom: 3px solid white; */
+    transition: background-color 1.5s;
+    border-bottom: 3px solid white;
   }
 `;
 
