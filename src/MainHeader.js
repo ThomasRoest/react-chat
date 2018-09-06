@@ -2,6 +2,7 @@
 
 import React from "react";
 import styled from "styled-components";
+import camera from "./images/camera.svg";
 import search from "./images/search.svg";
 
 const Header = styled.header`
@@ -69,12 +70,16 @@ const HeaderNav = styled.nav`
     flex-grow: 1;
     text-align: center;
     padding-top: 12px;
-    transition: background-color 1.5s;
+    transition: background-color 2s;
+    /* color: ${props => (props.primary ? "blue" : "red")}; */
+    img {
+      color: white;
+    }
   }
   a:active {
     background-color: lightgray;
-    transition: background-color 1.5s;
-    border-bottom: 3px solid white;
+    transition: background-color 2s;
+    /* border-bottom: 3px solid white; */
   }
 `;
 
@@ -94,9 +99,10 @@ const MainHeader = ({ changeViewState }) => {
           <span />
         </SettingsIcon>
       </HeaderTop>
-      <HeaderNav>
-        <a data-nav="1" onClick={e => changeViewState(e)}>
-          Ic
+      <HeaderNav primary={true}>
+        {/* // add navitem component */}
+        <a data-nav="1" onClick={changeViewState}>
+          <img src={camera} alt="camera" />
         </a>
         <a data-nav="2" onClick={changeViewState}>
           Chats

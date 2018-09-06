@@ -16,12 +16,7 @@ const StyledListItem = styled.a`
 
 const ListItemAvatar = styled.div`
   flex-basis: 20%;
-  padding-left: 15px;
-  /* padding-top: 10px; */
-  /* padding-bottom: 15px; */
-  /* padding: 12px 0px 12px 15px; */
   img {
-    /* height: 10px; */
     border-radius: 50%;
   }
 `;
