@@ -26,6 +26,7 @@ class App extends React.Component<null, State> {
 
   changeViewState = event => {
     const newState = event.target.dataset.nav;
+    // console.log(event.target.dataset);
     this.setState({ viewState: newState });
   };
 
