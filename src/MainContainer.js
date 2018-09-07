@@ -7,7 +7,6 @@ import MainCarousel from "./MainCarousel";
 
 const Main = styled.main`
   background: lightgray;
-  height: 100vh;
   margin-top: 105px;
 `;
 

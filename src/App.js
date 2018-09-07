@@ -31,7 +31,10 @@ class App extends React.Component<null, State> {
   render() {
     return (
       <div className="App">
-        <MainHeader changeViewState={this.changeViewState} />
+        <MainHeader
+          changeViewState={this.changeViewState}
+          viewState={this.state.viewState}
+        />
         <MainContainer viewState={this.state.viewState} />
       </div>
     );
