@@ -21,11 +21,12 @@ type State = {
 
 class App extends React.Component<null, State> {
   state = {
-    viewState: "1"
+    viewState: "2"
   };
 
   changeViewState = event => {
-    this.setState({ viewState: event.target.dataset.nav });
+    const newState = event.target.dataset.nav;
+    this.setState({ viewState: newState });
   };
 
   render() {

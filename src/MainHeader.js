@@ -36,6 +36,9 @@ const StyledNavItem = styled.a`
   img {
     color: white;
   }
+  /* background-image: ${props =>
+    props.icon === "true" ? `url(${camera}) ` : "none"}; */
+
   &:active {
     background-color: lightgray;
     transition: background-color 1.5s;
@@ -58,8 +61,11 @@ const MainHeader = ({ changeViewState, viewState }: Props) => {
           onClick={changeViewState}
           viewState={viewState}
           current="1"
+          icon="true"
         >
-          <img src={camera} alt="camera" />
+          {/* this image messing up event.target? */}
+          {/* <img src={camera} alt="camera" /> */}
+          camera
         </StyledNavItem>
         <StyledNavItem
           data-nav="2"
