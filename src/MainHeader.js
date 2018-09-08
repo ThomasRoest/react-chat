@@ -33,9 +33,7 @@ const StyledNavItem = styled.a`
   transition: background-color 1.5s;
   border-bottom: ${props =>
     props.viewState === props.current ? "3px solid white" : "none"};
-  img {
-    color: white;
-  }
+  color: ${props => (props.viewState === props.current ? "white" : "#83afaa")};
 
   &:active {
     background-color: lightgray;

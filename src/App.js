@@ -15,6 +15,12 @@ injectGlobal`
    }
 `;
 
+// const GlobalStyle = createGlobalStyle`
+//   html {
+//     color: red;
+//   }
+// `;
+
 type State = {
   viewState: string
 };
