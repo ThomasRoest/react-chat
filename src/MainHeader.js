@@ -14,8 +14,8 @@ const Header = styled.header`
 
 const HeaderNav = styled.nav`
   background-color: #075e54;
-  font-size: 0.8em;
-  font-weight: 600;
+  font-size: 0.9em;
+  font-weight: 500;
   height: 45px;
   display: flex;
   letter-spacing: 0.4px;
@@ -40,6 +40,9 @@ const StyledNavItem = styled.a`
     transition: background-color 1.5s;
     border-bottom: 3px solid white;
   }
+  svg {
+    fill: ${props => (props.viewState === props.current ? "white" : "#83afaa")};
+  }
 `;
 
 type Props = {
@@ -60,7 +63,22 @@ const MainHeader = ({ changeViewState, viewState }: Props) => {
           // icon="true"
         >
           {/* this image messing up event.target? */}
-          <img src={camera} data-nav="1" alt="camera" />
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            // data-nav="1"
+          >
+            <title>camera</title>
+            <path
+              // fill="grey"
+              d="M0 6c0-1.1 0.9-2 2-2h3l2-2h6l2 2h3c1.105 0 2 0.895 2 2v0 10c0 1.105-0.895 2-2 2v0h-16c-1.105 0-2-0.895-2-2v0-10zM10 16c2.761 0 5-2.239 5-5s-2.239-5-5-5v0c-2.761 0-5 2.239-5 5s2.239 5 5 5v0zM10 14c-1.657 0-3-1.343-3-3s1.343-3 3-3v0c1.657 0 3 1.343 3 3s-1.343 3-3 3v0z"
+            />
+          </svg>
+
+          {/* <img src={camera} data-nav="1" alt="camera" /> */}
         </StyledNavItem>
         <StyledNavItem
           data-nav="2"
@@ -68,7 +86,7 @@ const MainHeader = ({ changeViewState, viewState }: Props) => {
           viewState={viewState}
           current="2"
         >
-          calls
+          CHATS
         </StyledNavItem>
         <StyledNavItem
           data-nav="3"
@@ -76,7 +94,7 @@ const MainHeader = ({ changeViewState, viewState }: Props) => {
           viewState={viewState}
           current="3"
         >
-          contacts
+          STATUS
         </StyledNavItem>
         <StyledNavItem
           data-nav="4"
@@ -84,7 +102,7 @@ const MainHeader = ({ changeViewState, viewState }: Props) => {
           viewState={viewState}
           current="4"
         >
-          hello
+          CALLS
         </StyledNavItem>
       </HeaderNav>
     </Header>
