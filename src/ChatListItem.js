@@ -61,11 +61,12 @@ const ChatListItem = () => (
     </ListItemAvatar>
     <ListItemContent>
       <ContentTopRow>
-        <h4>Chat title over here</h4>
+        <h4>Chat title over here 🔥😀 🚀</h4>
         <span>06-08-18</span>
+        {/* <span>🚀 🔥😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 </span> */}
       </ContentTopRow>
       <ContentBottomRow>
-        <span>I'm the preview of the message....</span>
+        <span>I'm the preview of the message....😊 </span>
         <span>icon</span>
       </ContentBottomRow>
     </ListItemContent>

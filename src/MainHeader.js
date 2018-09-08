@@ -12,8 +12,10 @@ const Header = styled.header`
   z-index: 1;
 `;
 
+const bcolor = "#075e54";
+
 const HeaderNav = styled.nav`
-  background-color: #075e54;
+  background-color: ${bcolor}
   font-size: 0.9em;
   font-weight: 600;
   height: 45px;
