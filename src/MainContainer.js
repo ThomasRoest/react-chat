@@ -7,7 +7,7 @@ import MainCarousel from "./MainCarousel";
 
 const Main = styled.main`
   background: lightgray;
-  margin-top: 105px;
+  padding-top: 105px;
 `;
 
 type Props = {
