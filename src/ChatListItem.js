@@ -15,6 +15,8 @@ const StyledListItem = styled.a`
 const ListItemAvatar = styled.div`
   flex-basis: 20%;
   img {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
   }
 `;
@@ -47,6 +49,10 @@ const ContentBottomRow = styled.div`
   justify-content: space-between;
   span:first-child {
     font-size: 0.9em;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 250px;
+    text-overflow: ellipsis;
   }
   span {
     color: #737373;
@@ -54,19 +60,25 @@ const ContentBottomRow = styled.div`
   }
 `;
 
-const ChatListItem = () => (
+type Props = {
+  title: string,
+  preview: string,
+  avatar: string
+};
+
+const ChatListItem = ({ title, preview, avatar }: Props) => (
   <StyledListItem>
     <ListItemAvatar>
-      <img src="https://www.placecage.com/50/50" alt="" />
+      <img src={avatar} alt={title} />
     </ListItemAvatar>
     <ListItemContent>
       <ContentTopRow>
-        <h4>Chat title over here 🔥😀 🚀</h4>
+        <h4>{title}</h4>
         <span>06-08-18</span>
         {/* <span>🚀 🔥😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 </span> */}
       </ContentTopRow>
       <ContentBottomRow>
-        <span>I'm the preview of the message....😊 </span>
+        <span>{preview}</span>
         <span>icon</span>
       </ContentBottomRow>
     </ListItemContent>

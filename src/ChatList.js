@@ -3,6 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import ChatListItem from "./ChatListItem";
+import data from "./data.js";
 
 const StyledList = styled.ul`
   padding: 0;
@@ -12,13 +13,15 @@ const StyledList = styled.ul`
 const ChatList = () => {
   return (
     <StyledList>
-      <ChatListItem />
-      <ChatListItem />
-      <ChatListItem />
-      <ChatListItem />
-      <ChatListItem />
-      <ChatListItem />
-      <ChatListItem />
+      {/* {JSON.stringify(data)} */}
+      {data.map(item => (
+        <ChatListItem
+          key={item.id}
+          title={item.title}
+          avatar={item.avatar}
+          preview={item.preview}
+        />
+      ))}
     </StyledList>
   );
 };
