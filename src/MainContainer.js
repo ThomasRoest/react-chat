@@ -15,11 +15,7 @@ type Props = {
 };
 
 const MainContainer = ({ viewState }: Props) => {
-  return (
-    <Main>
-      <MainCarousel viewState={viewState} />
-    </Main>
-  );
+  return <Main>{/* <MainCarousel viewState={viewState} /> */}</Main>;
 };
 
 export default MainContainer;
