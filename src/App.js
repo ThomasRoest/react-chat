@@ -81,6 +81,13 @@ type State = {
   viewState: string
 };
 
+const StyledApp = styled.div`
+  max-width: 450px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 50px lightgrey;
+  background: #fafafa;
+`;
+
 const HeaderTop = styled.header`
   background: green;
   padding: 20px;
@@ -138,7 +145,7 @@ class App extends React.Component<null, State> {
     const { changeViewState } = this;
     const { viewState } = this.state;
     return (
-      <div>
+      <StyledApp>
         <StyledHeaderTop>
           <div>
             <h1>Whaddup</h1>
@@ -205,7 +212,7 @@ class App extends React.Component<null, State> {
           viewState={this.state.viewState}
         /> */}
         {/* <MainContainer viewState={this.state.viewState} /> */}
-      </div>
+      </StyledApp>
     );
   }
 }
