@@ -7,11 +7,14 @@ const Carousel = styled.div`
   min-width: 200px;
   min-height: 100vh;
   /* overflow-y: visible; */
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   text-align: center;
   position: relative;
   padding: 0;
   list-style: none;
+  /* ::-webkit-scrollbar {
+    display: none;
+  } */
 `;
 
 const CarouselTrack = styled.div`
@@ -26,29 +29,32 @@ const CarouselTrack = styled.div`
 `;
 
 const MainCarousel = ({ viewState }) => {
-  const trackClass = `carousel__track carousel__track slide${viewState}`;
+  const trackClass = `carousel__track  slide${viewState}`;
 
   return (
     <Carousel>
       <div className={trackClass}>
-        <ul className="testinglist">
-          <li>{trackClass}</li>
-          <li>should be status here</li>
-        </ul>
         <li className="carousel__slide ">
           <ul className="testinglist">
             <li>{trackClass}</li>
-            <li>should be status here</li>
+            <li>this is the camera</li>
           </ul>
         </li>
-        <li className="carousel__slide ">
-          <ul className="testinglist">
-            <li>{trackClass}</li>
-            <li>should be status here</li>
-          </ul>
-        </li>
+
         <li className="carousel__slide ">
           <ChatList />
+        </li>
+        <li className="carousel__slide ">
+          <ul className="testinglist">
+            <li>{trackClass}</li>
+            <li>should be status here</li>
+          </ul>
+        </li>
+        <li className="carousel__slide ">
+          <ul className="testinglist">
+            <li>{trackClass}</li>
+            <li>should be status here</li>
+          </ul>
         </li>
       </div>
     </Carousel>

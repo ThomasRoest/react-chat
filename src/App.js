@@ -6,6 +6,7 @@ import MainContainer from "./MainContainer";
 import { injectGlobal } from "styled-components";
 import styled from "styled-components";
 import MainCarousel from "./MainCarousel";
+import search from "./images/search.svg";
 
 injectGlobal`
    *, *:before, *:after {
@@ -15,6 +16,47 @@ injectGlobal`
     font-family: 'Roboto', sans-serif;
     margin: 0;
    }
+`;
+
+const StyledHeaderTop = styled.div`
+  background-color: #075e54;
+  height: 5px;
+  display: flex;
+  height: 60px;
+  align-items: center;
+  div h1 {
+    color: white;
+    font-weight: 500;
+    font-size: 1.3em;
+    padding-left: 17px;
+  }
+  div:nth-child(1) {
+    flex-basis: 90%;
+  }
+`;
+const SearchIcon = styled.div`
+  flex-basis: 10%;
+  img {
+    margin: 0;
+    padding: 0;
+    height: 17px;
+  }
+`;
+
+const SettingsIcon = styled.div`
+  flex-basis: 10%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  span {
+    align-self: flex-end;
+    width: 4px;
+    height: 4px;
+    margin: 1px;
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+  }
 `;
 
 const StyledNavItem = styled.a`
@@ -97,7 +139,19 @@ class App extends React.Component<null, State> {
     const { viewState } = this.state;
     return (
       <div>
-        <HeaderTop>headertop</HeaderTop>
+        <StyledHeaderTop>
+          <div>
+            <h1>Whaddup</h1>
+          </div>
+          <SearchIcon>
+            <img src={search} alt="search" />
+          </SearchIcon>
+          <SettingsIcon>
+            <span />
+            <span />
+            <span />
+          </SettingsIcon>
+        </StyledHeaderTop>
         <HeaderNav>
           <StyledNavItem
             data-nav="1"
