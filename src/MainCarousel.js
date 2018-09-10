@@ -5,10 +5,10 @@ import styled from "styled-components";
 
 const Carousel = styled.div`
   min-width: 200px;
-  min-height: 100vh;
-  /* overflow-y: visible; */
+  min-height: 850px;
+  overflow-y: hidden;
   overflow-x: hidden;
-  text-align: center;
+  /* text-align: center; */
   position: relative;
   padding: 0;
   list-style: none;
