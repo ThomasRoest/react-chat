@@ -35,26 +35,29 @@ const MainCarousel = ({ viewState }) => {
     <Carousel>
       <div className={trackClass}>
         <li className="carousel__slide ">
-          <ul className="testinglist">
-            <li>{trackClass}</li>
+          {trackClass}
+          {/* <ul className="testinglist">
+            {trackClass}
             <li>this is the camera</li>
-          </ul>
+          </ul> */}
         </li>
 
         <li className="carousel__slide ">
           <ChatList />
         </li>
         <li className="carousel__slide ">
-          <ul className="testinglist">
+          {trackClass}
+          {/* <ul className="testinglist">
             <li>{trackClass}</li>
             <li>should be status here</li>
-          </ul>
+          </ul> */}
         </li>
         <li className="carousel__slide ">
-          <ul className="testinglist">
+          {trackClass}
+          {/* <ul className="testinglist">
             <li>{trackClass}</li>
             <li>should be status here</li>
-          </ul>
+          </ul> */}
         </li>
       </div>
     </Carousel>

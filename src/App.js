@@ -125,7 +125,7 @@ const MainContent = styled.main`
 
 class App extends React.Component<null, State> {
   state = {
-    viewState: "1"
+    viewState: "2"
   };
 
   changeViewState = event => {
