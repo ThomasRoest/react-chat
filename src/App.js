@@ -40,7 +40,7 @@ type State = {
 };
 
 const HeaderTop = styled.header`
-  background: lightgreen;
+  background: green;
   padding: 20px;
 `;
 const bcolor = "#075e54";
@@ -88,7 +88,7 @@ class App extends React.Component<null, State> {
 
   changeViewState = event => {
     const newState = event.target.dataset.nav;
-    // console.log(event.target.dataset);
+    console.log(event.target.dataset);
     this.setState({ viewState: newState });
   };
 
@@ -141,11 +141,11 @@ class App extends React.Component<null, State> {
             CALLS
           </StyledNavItem>
         </HeaderNav>
-        <MainContent>
-          <MainCarousel />
+        <MainCarousel viewState={viewState} />
+        {/* <MainContent>
           <p>title</p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id augue
-        </MainContent>
+        </MainContent> */}
         {/* <MainHeader
           changeViewState={this.changeViewState}
           viewState={this.state.viewState}

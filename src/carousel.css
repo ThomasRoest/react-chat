@@ -22,7 +22,7 @@
 .carousel__slide {
   height: 100%;
   position: absolute;
-  overflow-y: auto;
+  /* overflow-y: hidden; */
   opacity: 0;
   background-color: lightblue;
 }

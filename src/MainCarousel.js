@@ -5,8 +5,9 @@ import styled from "styled-components";
 
 const Carousel = styled.div`
   min-width: 200px;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  /* overflow-y: visible; */
+  /* overflow-x: hidden; */
   text-align: center;
   position: relative;
   padding: 0;
