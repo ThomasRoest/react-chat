@@ -25,7 +25,7 @@ const CarouselTrack = styled.div`
   left: 0;
   padding: 0;
   margin: 0;
-  transition: transform 0.5s ease 0s;
+  transition: transform 0.2s ease 0s;
   transform: translateX(${props => props.goToSlide});
 `;
 
@@ -40,6 +40,7 @@ const Slide1 = styled.li`
   position: absolute;
   /* opacity: 0; */
   background-color: lightblue;
+  transition: transform 0.2s;
   transform: translateX(0%);
 `;
 
@@ -53,6 +54,7 @@ const Slide2 = styled.li`
   position: absolute;
   /* opacity: 0; */
   background-color: lightblue;
+  transition: transform 0.2s;
   transform: translateX(100%);
 `;
 
@@ -66,6 +68,7 @@ const Slide3 = styled.li`
   position: absolute;
   /* opacity: 0; */
   background-color: lightblue;
+  transition: transform 0.2s;
   transform: translateX(200%);
 `;
 
@@ -79,6 +82,7 @@ const Slide4 = styled.li`
   position: absolute;
   /* opacity: 0; */
   background-color: lightblue;
+  transition: transform 0.2s;
   transform: translateX(300%);
 `;
 
