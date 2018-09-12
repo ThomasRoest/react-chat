@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:900");
 
-.carousel__track {
+/* .carousel__track {
   position: absolute;
   top: 0;
   right: 0;
@@ -9,7 +9,7 @@
   padding: 0;
   margin: 0;
   transition: transform 0.5s ease 0s;
-}
+} */
 
 .carousel__track .carousel__slide {
   display: block;
