@@ -14,6 +14,7 @@ injectGlobal`
    body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
+    background-color: #fafafa;
    }
 `;
 
@@ -21,7 +22,6 @@ const StyledApp = styled.div`
   max-width: 450px;
   margin: 0 auto;
   box-shadow: 0px 0px 50px lightgrey;
-  background: #fafafa;
 `;
 
 type State = {

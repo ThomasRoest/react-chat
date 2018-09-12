@@ -1,5 +1,4 @@
 import React from "react";
-// import "./carousel.css";
 import ChatList from "./ChatList";
 import styled from "styled-components";
 
@@ -8,13 +7,8 @@ const Carousel = styled.div`
   min-height: 850px;
   overflow-y: hidden;
   overflow-x: hidden;
-  /* text-align: center; */
   position: relative;
   padding: 0;
-  list-style: none;
-  /* ::-webkit-scrollbar {
-    display: none;
-  } */
 `;
 
 const CarouselTrack = styled.div`
@@ -29,7 +23,8 @@ const CarouselTrack = styled.div`
   transform: translateX(${props => props.goToSlide});
 `;
 
-const Slide1 = styled.li`
+const Slide = styled.div`
+  position: absolute;
   color: red;
   display: block;
   top: 0;
@@ -37,98 +32,32 @@ const Slide1 = styled.li`
   right: 0;
   /* opacity: 1; */
   height: 100%;
-  position: absolute;
   /* opacity: 0; */
   background-color: lightblue;
   transition: transform 0.2s;
-  transform: translateX(0%);
-`;
-
-const Slide2 = styled.li`
-  display: block;
-  top: 0;
-  left: 0;
-  right: 0;
-  /* opacity: 1; */
-  height: 100%;
-  position: absolute;
-  /* opacity: 0; */
-  background-color: lightblue;
-  transition: transform 0.2s;
-  transform: translateX(100%);
-`;
-
-const Slide3 = styled.li`
-  display: block;
-  top: 0;
-  left: 0;
-  right: 0;
-  /* opacity: 1; */
-  height: 100%;
-  position: absolute;
-  /* opacity: 0; */
-  background-color: lightblue;
-  transition: transform 0.2s;
-  transform: translateX(200%);
-`;
-
-const Slide4 = styled.li`
-  display: block;
-  top: 0;
-  left: 0;
-  right: 0;
-  /* opacity: 1; */
-  height: 100%;
-  position: absolute;
-  /* opacity: 0; */
-  background-color: lightblue;
-  transition: transform 0.2s;
-  transform: translateX(300%);
+  transform: translateX(${props => props.defaultPosition});
 `;
 
 const MainCarousel = ({ viewState }) => {
-  let percentage;
+  let position;
   if (viewState === "1") {
-    percentage = "0%";
+    position = "0%";
   } else if (viewState === "2") {
-    percentage = "-100%";
+    position = "-100%";
   } else if (viewState === "3") {
-    percentage = "-200%";
+    position = "-200%";
   } else if (viewState === "4") {
-    percentage = "-300%";
+    position = "-300%";
   }
-  // add slide component with translateX props percentage
   return (
     <Carousel>
-      <CarouselTrack goToSlide={percentage}>
-        <Slide1>
-          slide 1 slide 1 slide 1 slide 1 slide 1 slide 1 slide 1 slide 1<ul />
-          <li>asdfasdf</li>
-          <li>asdfasdf</li>
-          <li>asdfasdf</li>
-          <li>asdfasdf</li>
-        </Slide1>
-        <Slide2>
+      <CarouselTrack goToSlide={position}>
+        <Slide defaultPosition={"0%"}>slide 1 jo</Slide>
+        <Slide defaultPosition={"100%"}>
           <ChatList />
-        </Slide2>
-        <Slide3>slide 3</Slide3>
-        <Slide4>slide 4</Slide4>
-
-        {/* <li className="carousel__slide ">
-          <ChatList />
-        </li>
-        <li className="carousel__slide "> */}
-        {/* <ul className="testinglist">
-            <li>{trackClass}</li>
-            <li>should be status here</li>
-          </ul> */}
-        {/* </li> */}
-        {/* <li className="carousel__slide "> */}
-        {/* <ul className="testinglist">
-            <li>{trackClass}</li>
-            <li>should be status here</li>
-          </ul> */}
-        {/* </li> */}
+        </Slide>
+        <Slide defaultPosition={"200%"}>and some more</Slide>
+        <Slide defaultPosition={"300%"}>ok then</Slide>
       </CarouselTrack>
     </Carousel>
   );
