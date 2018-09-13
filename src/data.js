@@ -94,7 +94,20 @@ const messages = [
   }
 ];
 
-export default messages;
+const status = [
+  {
+    id: 21326,
+    title: "Add a new status",
+    preview: "Nisi et dolor minima eum consequatur autem suscipit non.",
+    avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/illyzoren/128.jpg",
+    phrase1: "We need to bypass the redundant HDD system!",
+    phrase3: "transmit collaborative whiteboard convergence"
+  }
+];
+
+export { messages, status };
+
+// export default messages;
 
 {
   /* <span>🚀 🔥😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 </span> */

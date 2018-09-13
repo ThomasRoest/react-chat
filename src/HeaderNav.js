@@ -31,9 +31,9 @@ const StyledHeaderNav = styled.nav`
 const StyledNavItem = styled.a`
   text-align: center;
   transition: background-color 1.5s;
+  color: ${props => (props.viewState === props.current ? "white" : "#83afaa")};
   border-bottom: ${props =>
     props.viewState === props.current ? "3px solid white" : "none"};
-  color: ${props => (props.viewState === props.current ? "white" : "#83afaa")};
   &:active {
     background-color: lightgray;
     transition: background-color 1.5s;

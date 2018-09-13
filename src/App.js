@@ -30,10 +30,10 @@ type State = {
 
 class App extends React.Component<null, State> {
   state = {
-    viewState: "2"
+    viewState: "3"
   };
 
-  changeViewState = event => {
+  changeViewState = (event: KeyboardEvent) => {
     const newState = event.target.dataset.nav;
     this.setState({ viewState: newState });
   };

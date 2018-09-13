@@ -1,5 +1,8 @@
+//@flow
+
 import React from "react";
 import ChatList from "./ChatList";
+import StatusList from "./StatusList";
 import styled from "styled-components";
 
 const Carousel = styled.div`
@@ -25,7 +28,6 @@ const CarouselTrack = styled.div`
 
 const Slide = styled.div`
   position: absolute;
-  color: red;
   display: block;
   top: 0;
   left: 0;
@@ -33,12 +35,13 @@ const Slide = styled.div`
   /* opacity: 1; */
   height: 100%;
   /* opacity: 0; */
-  background-color: lightblue;
   transition: transform 0.2s;
   transform: translateX(${props => props.defaultPosition});
 `;
 
-const MainCarousel = ({ viewState }) => {
+type Props = { viewState: string };
+
+const MainCarousel = ({ viewState }: Props) => {
   let position;
   if (viewState === "1") {
     position = "0%";
@@ -52,12 +55,14 @@ const MainCarousel = ({ viewState }) => {
   return (
     <Carousel>
       <CarouselTrack goToSlide={position}>
-        <Slide defaultPosition={"0%"}>slide 1 jo</Slide>
+        <Slide defaultPosition={"0%"}>Camera slide</Slide>
         <Slide defaultPosition={"100%"}>
           <ChatList />
         </Slide>
-        <Slide defaultPosition={"200%"}>and some more</Slide>
-        <Slide defaultPosition={"300%"}>ok then</Slide>
+        <Slide defaultPosition={"200%"}>
+          <StatusList />
+        </Slide>
+        <Slide defaultPosition={"300%"}>Calls</Slide>
       </CarouselTrack>
     </Carousel>
   );
