@@ -3,6 +3,7 @@
 import React from "react";
 import ChatList from "./ChatList";
 import StatusList from "./StatusList";
+import CallsList from "./CallsList";
 import styled from "styled-components";
 
 const Carousel = styled.div`
@@ -62,7 +63,9 @@ const MainCarousel = ({ viewState }: Props) => {
         <Slide defaultPosition={"200%"}>
           <StatusList />
         </Slide>
-        <Slide defaultPosition={"300%"}>Calls</Slide>
+        <Slide defaultPosition={"300%"}>
+          <CallsList />
+        </Slide>
       </CarouselTrack>
     </Carousel>
   );

@@ -30,7 +30,7 @@ type State = {
 
 class App extends React.Component<null, State> {
   state = {
-    viewState: "3"
+    viewState: "4"
   };
 
   changeViewState = (event: KeyboardEvent) => {

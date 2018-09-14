@@ -2,7 +2,6 @@
 
 import React from "react";
 import styled from "styled-components";
-import { statusItems } from "./statusItems.js";
 
 const StyledListItem = styled.a`
   background: #fafafa;
@@ -27,7 +26,7 @@ const ListItemAvatar = styled.div`
 
 const ListItemContent = styled.div`
   flex-basis: 80%;
-  /* border-bottom: 1px solid #e4e4e4; */
+  border-bottom: 1px solid #e4e4e4;
   padding-left: 13px;
   padding: 17px 15px 17px 0px;
 `;
@@ -64,46 +63,29 @@ const ContentBottomRow = styled.div`
   }
 `;
 
-const AddStatus = styled.span`
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background-color: #20c659;
-  color: white;
-  position: absolute;
-  text-align: center;
-  font-weight: bold;
-  top: 40px;
-  left: 40px;
-`;
-
 type Props = {
   title: string,
   preview: string,
   avatar: string
 };
 
-const StatusListItem = ({ title, preview, avatar }: Props) => (
+const CallsListItem = ({ title, preview, avatar }: Props) => (
   <StyledListItem>
     <ListItemAvatar>
-      {/* <pre>
-        <code>{JSON.stringify(status)}</code>
-      </pre> */}
-      <img src={statusItems[0].avatar} alt={title} />
-      <AddStatus>+</AddStatus>
+      <img src={avatar} alt={title} />
     </ListItemAvatar>
     <ListItemContent>
       <ContentTopRow>
-        <h4>{statusItems[0].title}</h4>
-        {/* <span>06-08-18</span> */}
+        <h4>{title}</h4>
+        <span>06-08-18</span>
         {/* <span>🚀 🔥😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 </span> */}
       </ContentTopRow>
       <ContentBottomRow>
-        <span>{statusItems[0].preview}</span>
-        {/* <span>icon</span> */}
+        <span>{preview}</span>
+        <span>icon</span>
       </ContentBottomRow>
     </ListItemContent>
   </StyledListItem>
 );
 
-export default StatusListItem;
+export default CallsListItem;
