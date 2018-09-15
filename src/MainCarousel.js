@@ -42,7 +42,7 @@ const Slide = styled.div`
 
 type Props = { viewState: string };
 
-const MainCarousel = ({ viewState }: Props) => {
+const MainCarousel = ({ viewState, showChatScreen }: Props) => {
   let position;
   if (viewState === "1") {
     position = "0%";
@@ -58,7 +58,7 @@ const MainCarousel = ({ viewState }: Props) => {
       <CarouselTrack goToSlide={position}>
         <Slide defaultPosition={"0%"}>Camera slide</Slide>
         <Slide defaultPosition={"100%"}>
-          <ChatList />
+          <ChatList showChatScreen={showChatScreen} />
         </Slide>
         <Slide defaultPosition={"200%"}>
           <StatusList />

@@ -47,7 +47,7 @@ class App extends React.Component<null, State> {
   };
 
   closeChatScreen = () => {
-    this.setState({ chatScreen: false });
+    this.setState({ chatScreenPosition: "0" });
   };
 
   render() {
@@ -67,7 +67,10 @@ class App extends React.Component<null, State> {
           viewState={this.state.viewState}
           changeViewState={this.changeViewState}
         />
-        <MainCarousel showChatScreen viewState={this.state.viewState} />
+        <MainCarousel
+          showChatScreen={this.showChatScreen}
+          viewState={this.state.viewState}
+        />
         <button onClick={this.showChatScreen}>test</button>
         {chatScreen}
       </StyledApp>
