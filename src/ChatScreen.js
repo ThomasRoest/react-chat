@@ -15,6 +15,14 @@ const StyledChatScreen = styled.div`
   /* width: 100%; */
   right: 0;
   z-index: 1;
+  /* transform: translateY(100%); */
+
+  transform: scale(${props => props.chatScreenPosition});
+  /* transform: opacity(0.6) */
+  /* transform: scale(1); */
+  /* equalto scaleX(0.7) scaleY(0.7) */
+
+  transition: transform 0.1s;
 `;
 
 const ChatScreenHeader = styled.header`
@@ -108,7 +116,7 @@ export class ChatScreen extends Component {
   }
   render() {
     return (
-      <StyledChatScreen>
+      <StyledChatScreen chatScreenPosition={this.props.chatScreenPosition}>
         <ChatScreenHeader>
           <div>icon</div>
           <div>image</div>

@@ -33,7 +33,8 @@ type State = {
 class App extends React.Component<null, State> {
   state = {
     viewState: "2",
-    chatScreen: false
+    chatScreen: false,
+    chatScreenPosition: "0"
   };
 
   changeViewState = (event: KeyboardEvent) => {
@@ -42,7 +43,7 @@ class App extends React.Component<null, State> {
   };
 
   showChatScreen = () => {
-    this.setState({ chatScreen: true });
+    this.setState({ chatScreenPosition: "1" });
   };
 
   closeChatScreen = () => {
@@ -51,9 +52,14 @@ class App extends React.Component<null, State> {
 
   render() {
     let chatScreen;
-    if (this.state.chatScreen) {
-      chatScreen = <ChatScreen closeChatScreen={this.closeChatScreen} />;
-    }
+    // if (this.state.chatScreen) {
+    chatScreen = (
+      <ChatScreen
+        chatScreenPosition={this.state.chatScreenPosition}
+        closeChatScreen={this.closeChatScreen}
+      />
+    );
+    // }
     return (
       <StyledApp>
         <HeaderTop />
