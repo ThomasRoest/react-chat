@@ -17,12 +17,46 @@ const StyledChatScreen = styled.div`
   z-index: 1;
   /* transform: translateY(100%); */
 
-  transform: scale(${props => props.chatScreenPosition});
+  /* transform: scale(); */
+  /* transform: scale(1.1, 1.1) translate(-20%, 30px); */
+  /* opacity: .2; */
+  /* transition: opacity(0.5) */
   /* transform: opacity(0.6) */
   /* transform: scale(1); */
   /* equalto scaleX(0.7) scaleY(0.7) */
 
-  transition: transform 0.1s;
+  /* transition: transform 0.1s; */
+  /* .element { */
+  transform: scale(${props => props.chatScreenPosition});
+  opacity: ${props => props.chatScreenPosition};
+  /* transition: transform 0.3s; */
+  /* transition: opacity 0.3s; */
+  transition: all 0.3s;
+  /* } */
+  /* transform: scale(0); */
+  /* opacity: 0; */
+
+  /* @keyframes fadeIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  } */
+
+  /* @keyframes fadeOut {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  } */
 `;
 
 const ChatScreenHeader = styled.header`
@@ -118,13 +152,13 @@ export class ChatScreen extends Component {
     return (
       <StyledChatScreen chatScreenPosition={this.props.chatScreenPosition}>
         <ChatScreenHeader>
-          <div>icon</div>
+          <div className="element">icon</div>
           <div>image</div>
           <div>icon</div>
           <div>icon</div>
           <div>icon</div>
         </ChatScreenHeader>
-        <ChatContent>
+        <ChatContent className="element">
           {messages.map(item => (
             <ChatMessage key={item.id} {...item} />
           ))}

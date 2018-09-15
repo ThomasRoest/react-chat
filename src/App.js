@@ -33,7 +33,6 @@ type State = {
 class App extends React.Component<null, State> {
   state = {
     viewState: "2",
-    chatScreen: false,
     chatScreenPosition: "0"
   };
 
@@ -51,9 +50,8 @@ class App extends React.Component<null, State> {
   };
 
   render() {
-    let chatScreen;
     // if (this.state.chatScreen) {
-    chatScreen = (
+    let chatScreen = (
       <ChatScreen
         chatScreenPosition={this.state.chatScreenPosition}
         closeChatScreen={this.closeChatScreen}
@@ -71,7 +69,6 @@ class App extends React.Component<null, State> {
           showChatScreen={this.showChatScreen}
           viewState={this.state.viewState}
         />
-        <button onClick={this.showChatScreen}>test</button>
         {chatScreen}
       </StyledApp>
     );
