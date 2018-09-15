@@ -1,8 +1,8 @@
 const chats = [
   {
     id: 64138,
-    title: "Krystel Wolff",
-    preview: "Deserunt voluptatem temporibus et.",
+    title: "⭐⭐About this Project⭐⭐",
+    preview: "Want to know more?",
     avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/gauchomatt/128.jpg",
     phrase1:
       "Use the primary RSS hard drive, then you can quantify the online card!",
@@ -98,6 +98,4 @@ export { chats };
 
 // export default chats;
 
-{
-  /* <span>🚀 🔥😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 </span> */
-}
+/* <span>🚀 🔥😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 </span> */

@@ -1,11 +1,12 @@
 //@flow
 
 import React from "react";
-import HeaderNav from "./HeaderNav";
-import HeaderTop from "./HeaderTop";
 import { injectGlobal } from "styled-components";
 import styled from "styled-components";
+import HeaderNav from "./HeaderNav";
+import HeaderTop from "./HeaderTop";
 import MainCarousel from "./MainCarousel";
+import ChatScreen from "./ChatScreen";
 
 injectGlobal`
    *, *:before, *:after {
@@ -21,6 +22,7 @@ injectGlobal`
 const StyledApp = styled.div`
   max-width: 450px;
   margin: 0 auto;
+  position: relative;
   box-shadow: 0px 0px 50px lightgrey;
 `;
 
@@ -30,7 +32,8 @@ type State = {
 
 class App extends React.Component<null, State> {
   state = {
-    viewState: "4"
+    viewState: "2",
+    chatScreen: false
   };
 
   changeViewState = (event: KeyboardEvent) => {
@@ -38,7 +41,19 @@ class App extends React.Component<null, State> {
     this.setState({ viewState: newState });
   };
 
+  showChatScreen = () => {
+    this.setState({ chatScreen: true });
+  };
+
+  closeChatScreen = () => {
+    this.setState({ chatScreen: false });
+  };
+
   render() {
+    let chatScreen;
+    if (this.state.chatScreen) {
+      chatScreen = <ChatScreen closeChatScreen={this.closeChatScreen} />;
+    }
     return (
       <StyledApp>
         <HeaderTop />
@@ -46,7 +61,9 @@ class App extends React.Component<null, State> {
           viewState={this.state.viewState}
           changeViewState={this.changeViewState}
         />
-        <MainCarousel viewState={this.state.viewState} />
+        <MainCarousel showChatScreen viewState={this.state.viewState} />
+        <button onClick={this.showChatScreen}>test</button>
+        {chatScreen}
       </StyledApp>
     );
   }
