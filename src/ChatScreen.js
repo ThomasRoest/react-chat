@@ -1,7 +1,7 @@
 //@flow
 
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { messages } from "./messages.js";
 
 const StyledChatScreen = styled.div`
@@ -22,49 +22,81 @@ const StyledChatScreen = styled.div`
   /* opacity: .2; */
   /* transition: opacity(0.5) */
   /* transform: opacity(0.6) */
-  /* transform: scale(1); */
+  transform: scale(0);
   /* equalto scaleX(0.7) scaleY(0.7) */
 
   /* transition: transform 0.1s; */
   /* .element { */
-  transform: scale(${props => props.chatScreenPosition});
-  opacity: ${props => props.chatScreenPosition};
+
+    ${props =>
+      props.chatScreenPosition === "1" &&
+      css`
+        animation-name: fadeIn;
+        animation-duration: 0.1s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+
+        @keyframes fadeIn {
+          0% {
+            transform: scale(0);
+            opacity: 0;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+      `}
+
+      ${props =>
+        props.chatScreenPosition === "0" &&
+        css`
+          animation-name: fadeOut;
+          animation-duration: 0.5s;
+          animation-timing-function: linear;
+          animation-delay: 0s;
+          animation-direction: normal;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+          animation-play-state: running;
+
+          @keyframes fadeOut {
+            0% {
+              transform: scale(1);
+              opacity: 1;
+            }
+            100% {
+              transform: scale(0);
+              opacity: 0;
+            }
+          }
+        `}
+
+
+
+  /* transform: scale(${props => props.chatScreenPosition}); */
+  /* opacity: ${props => props.chatScreenPosition}; */
   /* transition: transform 0.3s; */
   /* transition: opacity 0.3s; */
-  transition: all 0.3s;
+  /* transition: all 0.3s; */
   /* } */
   /* transform: scale(0); */
   /* opacity: 0; */
 
-  /* @keyframes fadeIn {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  } */
-
-  /* @keyframes fadeOut {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(0);
-      opacity: 0;
-    }
-  } */
+  /* https://cssreference.io/property/animation-fill-mode/ */
 `;
 
 const ChatScreenHeader = styled.header`
   display: flex;
+  position: relative;
   color: white;
   justify-content: space-around;
   background: #075e54;
-  position: fixed;
+  /* position: fixed; */
   width: 450px;
   height: 50px;
   /* max-width: inherit; */
@@ -141,7 +173,16 @@ const ChatMessage = props => {
   }
 };
 
-export class ChatScreen extends Component {
+type State = {
+  messages: Array<string>
+};
+
+type Props = {
+  chatScreenPosition: string,
+  closeChatScreen: Function
+};
+
+export class ChatScreen extends Component<Props, State> {
   state = {
     messages: []
   };
@@ -150,7 +191,10 @@ export class ChatScreen extends Component {
   }
   render() {
     return (
-      <StyledChatScreen chatScreenPosition={this.props.chatScreenPosition}>
+      <StyledChatScreen
+        primary
+        chatScreenPosition={this.props.chatScreenPosition}
+      >
         <ChatScreenHeader>
           <div className="element">icon</div>
           <div>image</div>
