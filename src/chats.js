@@ -1,8 +1,8 @@
 const chats = [
   {
     id: 64138,
-    title: "⭐⭐About this Project⭐⭐",
-    preview: "Want to know more?",
+    title: "Pete",
+    preview: "Hello there!",
     avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/gauchomatt/128.jpg",
     phrase1:
       "Use the primary RSS hard drive, then you can quantify the online card!",

@@ -9,98 +9,24 @@ const StyledChatScreen = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  /* bottom: 0; */
-  /* display: none; */
-  /* opacity: 2; */
-  /* width: 100%; */
   right: 0;
   z-index: 1;
-  /* transform: translateY(100%); */
-
-  /* transform: scale(); */
-  /* transform: scale(1.1, 1.1) translate(-20%, 30px); */
-  /* opacity: .2; */
-  /* transition: opacity(0.5) */
-  /* transform: opacity(0.6) */
-  transform: scale(0);
-  /* equalto scaleX(0.7) scaleY(0.7) */
-
-  /* transition: transform 0.1s; */
-  /* .element { */
-
-    ${props =>
-      props.chatScreenPosition === "1" &&
-      css`
-        animation-name: fadeIn;
-        animation-duration: 0.1s;
-        animation-timing-function: linear;
-        animation-delay: 0s;
-        animation-direction: normal;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-
-        @keyframes fadeIn {
-          0% {
-            transform: scale(0);
-            opacity: 0;
-          }
-          100% {
-            transform: scale(1);
-            opacity: 1;
-          }
-        }
-      `}
-
-      ${props =>
-        props.chatScreenPosition === "0" &&
-        css`
-          animation-name: fadeOut;
-          animation-duration: 0.5s;
-          animation-timing-function: linear;
-          animation-delay: 0s;
-          animation-direction: normal;
-          animation-iteration-count: 1;
-          animation-fill-mode: forwards;
-          animation-play-state: running;
-
-          @keyframes fadeOut {
-            0% {
-              transform: scale(1);
-              opacity: 1;
-            }
-            100% {
-              transform: scale(0);
-              opacity: 0;
-            }
-          }
-        `}
-
-
-
-  /* transform: scale(${props => props.chatScreenPosition}); */
-  /* opacity: ${props => props.chatScreenPosition}; */
-  /* transition: transform 0.3s; */
-  /* transition: opacity 0.3s; */
-  /* transition: all 0.3s; */
-  /* } */
-  /* transform: scale(0); */
-  /* opacity: 0; */
-
-  /* https://cssreference.io/property/animation-fill-mode/ */
+  transform: scale(${props => props.chatScreenPosition});
+  opacity: ${props => props.chatScreenPosition};
+  transition: opacity 0.3s ease-out;
 `;
 
-const ChatScreenHeader = styled.header`
+const ChatScreenHeader = styled.div`
   display: flex;
-  position: relative;
+  /* position: absolute; */
   color: white;
   justify-content: space-around;
   background: #075e54;
-  /* position: fixed; */
-  width: 450px;
-  height: 50px;
+  /* position: sticky; */
+  /* width: 450px; */
+  /* height: 50px; */
   /* max-width: inherit; */
-  top: 0;
+  /* top: 0; */
 `;
 
 const StyledChatScreenFooter = styled.footer`
