@@ -8,22 +8,27 @@ const StyledChatScreen = styled.div`
   background-color: #ece5dd;
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 1;
-  transform: scale(${props => props.chatScreenPosition});
-  opacity: ${props => props.chatScreenPosition};
-  transition: opacity 0.3s ease-out;
+  /* transform: scale(${props => props.chatScreenPosition}); */
+  transform: scale(0);
+  transition: opacity .1s linear; 
+  opacity: 0;
+
+  ${props =>
+    props.chatScreenPosition === "1" &&
+    css`
+      transform: none;
+      opacity: 1;
+    `}
 `;
 
 const ChatScreenHeader = styled.div`
   display: flex;
-  /* position: absolute; */
   color: white;
   justify-content: space-around;
   background: #075e54;
-  /* position: sticky; */
-  /* width: 450px; */
+  position: fixed;
+  width: 450px;
   /* height: 50px; */
   /* max-width: inherit; */
   /* top: 0; */
@@ -31,11 +36,11 @@ const ChatScreenHeader = styled.div`
 
 const StyledChatScreenFooter = styled.footer`
   background: #075e54;
-  position: sticky;
-  /* position: fixed; */
+  /* position: sticky; */
+  position: fixed;
   bottom: 0;
-  /* width: 450px; */
-  height: 50px;
+  width: 450px;
+  /* height: 50px; */
   /* z-index: 100; */
 `;
 
