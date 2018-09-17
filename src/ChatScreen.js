@@ -19,6 +19,7 @@ const StyledChatScreen = styled.div`
     css`
       transform: none;
       opacity: 1;
+      /* transition: all 1s; */
     `}
 `;
 
