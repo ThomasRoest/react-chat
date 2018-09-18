@@ -27,13 +27,14 @@ const StyledApp = styled.div`
 `;
 
 type State = {
-  viewState: string
+  viewState: string,
+  chatScreenPosition: string
 };
 
 class App extends React.Component<null, State> {
   state = {
     viewState: "2",
-    chatScreenPosition: null
+    chatScreenPosition: ""
   };
 
   changeViewState = (event: KeyboardEvent) => {
@@ -50,14 +51,6 @@ class App extends React.Component<null, State> {
   };
 
   render() {
-    // if (this.state.chatScreen) {
-    let chatScreen = (
-      <ChatScreen
-        chatScreenPosition={this.state.chatScreenPosition}
-        closeChatScreen={this.closeChatScreen}
-      />
-    );
-    // }
     return (
       <StyledApp>
         <HeaderTop />
@@ -69,7 +62,10 @@ class App extends React.Component<null, State> {
           showChatScreen={this.showChatScreen}
           viewState={this.state.viewState}
         />
-        {chatScreen}
+        <ChatScreen
+          chatScreenPosition={this.state.chatScreenPosition}
+          closeChatScreen={this.closeChatScreen}
+        />
       </StyledApp>
     );
   }

@@ -3,6 +3,9 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
 import { messages } from "./messages.js";
+import phone from "./images/phone.svg";
+import arrow from "./images/arrow-left2.svg";
+import video from "./images/video-camera.svg";
 
 const StyledChatScreen = styled.div`
   background-color: #ece5dd;
@@ -26,13 +29,29 @@ const StyledChatScreen = styled.div`
 const ChatScreenHeader = styled.div`
   display: flex;
   color: white;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   background: #075e54;
   position: fixed;
+  height: 60px;
   width: 450px;
-  /* height: 50px; */
-  /* max-width: inherit; */
-  /* top: 0; */
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+  a:first-child,
+  a:nth-child(3),
+  a:nth-child(4) {
+    /* flex-basis: 5%; */
+    img {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  a:nth-child(2) {
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
 `;
 
 const StyledChatScreenFooter = styled.footer`
@@ -85,6 +104,22 @@ const ChatScreenFooter = props => {
   );
 };
 
+const SettingsIcon = styled.div`
+  /* flex-basis: 10%; */
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  span {
+    align-self: flex-end;
+    width: 4px;
+    height: 4px;
+    margin: 1px;
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+  }
+`;
+
 const ChatContent = styled.div`
   /* color: red; */
 `;
@@ -123,16 +158,29 @@ export class ChatScreen extends Component<Props, State> {
   }
   render() {
     return (
-      <StyledChatScreen
-        primary
-        chatScreenPosition={this.props.chatScreenPosition}
-      >
+      <StyledChatScreen chatScreenPosition={this.props.chatScreenPosition}>
         <ChatScreenHeader>
-          <div className="element">icon</div>
-          <div>image</div>
-          <div>icon</div>
-          <div>icon</div>
-          <div>icon</div>
+          <a onClick={this.props.closeChatScreen}>
+            <img src={arrow} alt="arrow left icon" />
+          </a>
+          <a>
+            <img
+              src="https://s3.amazonaws.com/uifaces/faces/twitter/gauchomatt/128.jpg"
+              alt="user avatar"
+            />
+          </a>
+          <a>
+            <img src={video} alt="phone icon" />
+          </a>
+          <a>
+            <img src={phone} alt="phone icon" />
+          </a>
+
+          <SettingsIcon>
+            <span />
+            <span />
+            <span />
+          </SettingsIcon>
         </ChatScreenHeader>
         <ChatContent className="element">
           {messages.map(item => (
