@@ -40,7 +40,10 @@ const Slide = styled.div`
   transform: translateX(${props => props.defaultPosition});
 `;
 
-type Props = { viewState: string };
+type Props = {
+  viewState: string,
+  showChatScreen: Function
+};
 
 const MainCarousel = ({ viewState, showChatScreen }: Props) => {
   let position;

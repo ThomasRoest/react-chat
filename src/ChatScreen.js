@@ -34,20 +34,21 @@ const ChatScreenHeader = styled.div`
   background: #075e54;
   position: fixed;
   height: 60px;
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
   a:first-child,
-  a:nth-child(3),
-  a:nth-child(4) {
+  a:nth-child(4),
+  a:nth-child(5) {
     /* flex-basis: 5%; */
     img {
       height: 20px;
-      width: 20px;
+      /* width: 20px; */
     }
   }
   a:nth-child(2) {
     img {
-      width: 40px;
+      /* width: 40px; */
       height: 40px;
       border-radius: 50%;
     }
@@ -59,7 +60,7 @@ const StyledChatScreenFooter = styled.footer`
   /* position: sticky; */
   position: fixed;
   bottom: 0;
-  width: 450px;
+  /* width: 450px; */
   /* height: 50px; */
   /* z-index: 100; */
 `;
@@ -169,6 +170,7 @@ export class ChatScreen extends Component<Props, State> {
               alt="user avatar"
             />
           </a>
+          <a href="">pete</a>
           <a>
             <img src={video} alt="phone icon" />
           </a>

@@ -66,7 +66,8 @@ const ContentBottomRow = styled.div`
 type Props = {
   title: string,
   preview: string,
-  avatar: string
+  avatar: string,
+  showChatScreen: Function
 };
 
 const ChatListItem = ({ title, preview, avatar, showChatScreen }: Props) => (

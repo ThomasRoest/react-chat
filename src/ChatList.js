@@ -10,15 +10,15 @@ const StyledList = styled.ul`
   margin: 0;
 `;
 
-const ChatList = props => {
+type Props = {
+  showChatScreen: Function
+};
+
+const ChatList = ({ showChatScreen }: Props) => {
   return (
     <StyledList>
       {chats.map(item => (
-        <ChatListItem
-          key={item.id}
-          {...item}
-          showChatScreen={props.showChatScreen}
-        />
+        <ChatListItem key={item.id} {...item} showChatScreen={showChatScreen} />
       ))}
     </StyledList>
   );
