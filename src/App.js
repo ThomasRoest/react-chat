@@ -41,7 +41,7 @@ type State = {
 class App extends React.Component<null, State> {
   state = {
     viewState: "2",
-    chatScreenPosition: ""
+    chatScreenPosition: "1"
   };
 
   changeViewState = (event: KeyboardEvent) => {

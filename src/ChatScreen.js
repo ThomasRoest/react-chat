@@ -71,16 +71,6 @@ const ChatScreenHeaderRight = styled.div`
   }
 `;
 
-const StyledChatScreenFooter = styled.footer`
-  background: #075e54;
-  /* position: sticky; */
-  position: fixed;
-  bottom: 0;
-  /* width: 450px; */
-  /* height: 50px; */
-  /* z-index: 100; */
-`;
-
 const OutgoingChatMessage = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -112,11 +102,60 @@ const IncomingChatMessage = styled.div`
   }
 `;
 
+const StyledChatScreenFooter = styled.footer`
+  background: #ece5dd;
+  /* position: sticky; */
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  padding: 5px;
+  /* width: 450px; */
+  /* height: 50px; */
+  /* z-index: 100; */
+  /* div:first-child {
+    
+  }
+  div:nth-child(2) {
+    
+  } */
+`;
+
+const InputGroup = styled.div`
+  flex: 1 1 80%;
+  display: flex;
+  background-color: lightblue;
+  input {
+    flex: 1;
+  }
+`;
+
+const RecordIcon = styled.div`
+  /* background-color: yellow; */
+  flex: 1 1 20%;
+  div {
+    height: 50px;
+    width: 50px;
+    background-color: #075e54;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+`;
+
 const ChatScreenFooter = props => {
   return (
     <StyledChatScreenFooter>
-      footer
-      <button onClick={props.closeChatScreen}>close</button>
+      <InputGroup>
+        <span class="InputAddOn-item">{/* <img src={phone} alt="" /> */}</span>
+        <input class="InputAddOn-field" />
+        <span class="InputAddOn-item">{/* <img src={phone} alt="" /> */}</span>
+        <span class="InputAddOn-item">{/* <img src={phone} alt="" /> */}</span>
+      </InputGroup>
+      <RecordIcon>
+        <div>{/* <img src={phone} alt="" /> */}</div>
+      </RecordIcon>
     </StyledChatScreenFooter>
   );
 };
@@ -209,7 +248,7 @@ export class ChatScreen extends Component<Props, State> {
             <ChatMessage key={item.id} {...item} />
           ))}
         </ChatContent>
-        <ChatScreenFooter closeChatScreen={this.props.closeChatScreen} />
+        <ChatScreenFooter />
       </StyledChatScreen>
     );
   }
