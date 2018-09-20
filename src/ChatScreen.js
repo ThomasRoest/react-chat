@@ -6,6 +6,9 @@ import { messages } from "./messages.js";
 import phone from "./images/phone.svg";
 import arrow from "./images/arrow-left2.svg";
 import video from "./images/video-camera.svg";
+import camera from "./images/camera-grey.svg";
+import attachment from "./images/attachment.svg";
+import happy from "./images/happy.svg";
 
 const StyledChatScreen = styled.div`
   background-color: #ece5dd;
@@ -148,10 +151,16 @@ const ChatScreenFooter = props => {
   return (
     <StyledChatScreenFooter>
       <InputGroup>
-        <span class="InputAddOn-item">{/* <img src={phone} alt="" /> */}</span>
+        <span class="InputAddOn-item">
+          <img src={happy} alt="" />
+        </span>
         <input class="InputAddOn-field" />
-        <span class="InputAddOn-item">{/* <img src={phone} alt="" /> */}</span>
-        <span class="InputAddOn-item">{/* <img src={phone} alt="" /> */}</span>
+        <span class="InputAddOn-item">
+          <img src={attachment} alt="" />
+        </span>
+        <span class="InputAddOn-item">
+          <img src={camera} alt="" />
+        </span>
       </InputGroup>
       <RecordIcon>
         <div>{/* <img src={phone} alt="" /> */}</div>
