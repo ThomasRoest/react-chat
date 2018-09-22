@@ -9,6 +9,7 @@ import video from "./images/video-camera.svg";
 import camera from "./images/camera-grey.svg";
 import attachment from "./images/attachment.svg";
 import happy from "./images/happy.svg";
+import mic from "./images/mic.svg";
 
 const StyledChatScreen = styled.div`
   background-color: #ece5dd;
@@ -77,7 +78,6 @@ const ChatScreenHeaderRight = styled.div`
 const OutgoingChatMessage = styled.div`
   display: flex;
   justify-content: flex-end;
-  /* float: left; */
   span {
     max-width: 75%;
     margin-top: 7px;
@@ -92,8 +92,6 @@ const OutgoingChatMessage = styled.div`
 const IncomingChatMessage = styled.div`
   display: flex;
   justify-content: flex-start;
-  /* width: 100%; */
-  /* float: right; */
   span {
     margin-top: 7px;
     max-width: 75%;
@@ -107,7 +105,6 @@ const IncomingChatMessage = styled.div`
 
 const StyledChatScreenFooter = styled.footer`
   background: #ece5dd;
-  /* position: sticky; */
   position: fixed;
   bottom: 0;
   height: 60px;
@@ -115,28 +112,34 @@ const StyledChatScreenFooter = styled.footer`
   max-width: 450px;
   display: flex;
   padding: 5px;
-  /* width: 450px; */
-  /* height: 50px; */
-  /* z-index: 100; */
-  /* div:first-child {
-    
-  }
-  div:nth-child(2) {
-    
-  } */
 `;
 
 const InputGroup = styled.div`
   flex: 1 1 80%;
   display: flex;
-  background-color: lightblue;
+  align-items: center;
   input {
-    flex: 1;
+    flex: 1 1 auto;
+    font-size: 1em;
+    border: 0px;
+    height: 44px;
+  }
+  span {
+    &:first-child {
+      border-radius: 50% 0% 0% 50%;
+    }
+    &:last-child {
+      border-radius: 0% 50% 50% 0%;
+    }
+    background-color: white;
+    padding: 10px;
+    img {
+      height: 20px;
+    }
   }
 `;
 
 const RecordIcon = styled.div`
-  /* background-color: yellow; */
   flex: 1 1 20%;
   div {
     height: 50px;
@@ -144,6 +147,12 @@ const RecordIcon = styled.div`
     background-color: #075e54;
     border-radius: 50%;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: 20px;
+    }
   }
 `;
 
@@ -163,7 +172,9 @@ const ChatScreenFooter = props => {
         </span>
       </InputGroup>
       <RecordIcon>
-        <div>{/* <img src={phone} alt="" /> */}</div>
+        <div>
+          <img src={mic} alt="" />
+        </div>
       </RecordIcon>
     </StyledChatScreenFooter>
   );
