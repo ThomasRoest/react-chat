@@ -114,7 +114,7 @@ const StyledChatScreenFooter = styled.footer`
   padding: 5px;
 `;
 
-const InputGroup = styled.div`
+const InputGroup = styled.form`
   flex: 0 1 80%;
   /* background-color: lightblue; */
   display: flex;
@@ -152,70 +152,48 @@ const InputGroup = styled.div`
     height: 40px;
     border: 0px;
     background-color: #fff;
-    /* flex: 0 1 auto; */
-    /* flex-basis: 10%; */
-    /* max-width: 50px; */
     font-size: 1em;
-    /* padding-top: 10px; */
-  }
-  /* input {
-    flex: 0 1 auto;
-    font-size: 1em;
-    border: 0px;
-    height: 44px;
-  }
-  span {
-    &:first-child {
-      border-radius: 50% 0% 0% 50%;
     }
-    &:last-child {
-      border-radius: 0% 50% 50% 0%;
-    }
-    background-color: white;
-    padding: 10px;
-    img {
-      height: 20px;
-    } */
   }
 `;
 
 const RecordIcon = styled.div`
   flex: 0 1 20%;
-  /* height: 50px;
-  width: 50px; */
-  background-color: blue;
-  /* div { */
-    /* background-color: #075e54; */
-    /* border-radius: 50%; */
-    /* margin: 0 auto; */
-    /* display: flex;
+  /* background-color: blue; */
+  div {
+    height: 50px;
+    width: 50px;
+    background-color: #075e54;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
     align-items: center;
-    justify-content: center; */
-    /* img {
+    justify-content: center;
+    img {
       height: 20px;
-    } */
+    }
   }
 `;
 
 const ChatScreenFooter = props => {
   return (
     <StyledChatScreenFooter>
-      <InputGroup>
-        <span class="InputAddOn-item">
+      <InputGroup onSubmit={e => console.log(e.preventDefault())}>
+        <span>
           <img src={happy} alt="" />
         </span>
-        <input class="InputAddOn-field" />
-        <span class="InputAddOn-item">
+        <input type="text" />
+        <span>
           <img src={attachment} alt="" />
         </span>
-        <span class="InputAddOn-item">
+        <span>
           <img src={camera} alt="" />
         </span>
       </InputGroup>
       <RecordIcon>
+        {/* // conditionally render submit button */}
         <div>
-          icon
-          {/* <img src={mic} alt="" /> */}
+          <img src={mic} alt="" />
         </div>
       </RecordIcon>
     </StyledChatScreenFooter>

@@ -12,7 +12,7 @@ const CallsList = () => {
   return (
     <StyledList>
       {calls.map(item => (
-        <CallsListItem {...item} />
+        <CallsListItem key={item.id} {...item} />
       ))}
     </StyledList>
   );
