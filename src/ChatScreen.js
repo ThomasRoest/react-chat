@@ -116,16 +116,47 @@ const StyledChatScreenFooter = styled.footer`
 
 const InputGroup = styled.div`
   flex: 0 1 80%;
-  background-color: lightblue;
+  /* background-color: lightblue; */
   display: flex;
   align-items: center;
+  /* justify-content: center; */
+  /* align-content: center; */
   span {
+    flex-basis: 14%;
+    /* align-self: center; */
+    /* flex-grow: 1; */
+    /* flex-basis: 12%; */
+    /* padding-top: 10px; */
+    /* padding-bottom: 10px; */
+    /* padding: 10px; */
     background-color: white;
-    img { height: 20px;}
+    height: 40px;
+    text-align: center;
+    img { 
+      margin-top: 10px;
+      height: 20px; 
+    }
+    &:first-child {
+    border-radius: 50% 0% 0% 50%;
+    }
+    &:last-child {
+      border-radius: 0% 50% 50% 0%;
+    }
+    
   }
   input {
-    flex: 1 1 auto;
+    /* https://stackoverflow.com/questions/46684636/html-inputs-ignore-flex-basis-css-property */
+    flex-basis: 58%;
+    min-width: 0
+    appearance:none
+    height: 40px;
+    border: 0px;
+    background-color: #fff;
+    /* flex: 0 1 auto; */
+    /* flex-basis: 10%; */
+    /* max-width: 50px; */
     font-size: 1em;
+    /* padding-top: 10px; */
   }
   /* input {
     flex: 0 1 auto;
