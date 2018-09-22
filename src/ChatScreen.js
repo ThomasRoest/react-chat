@@ -82,7 +82,7 @@ const OutgoingChatMessage = styled.div`
     max-width: 75%;
     margin-top: 7px;
     background: #dcf8c6;
-    padding: 3px;
+    /* padding: 3px; */
     border-radius: 3px;
     /* max-width: -moz-fit-content; */
     /* max-width: -webkit-fit-content; */
@@ -105,21 +105,22 @@ const IncomingChatMessage = styled.div`
 
 const StyledChatScreenFooter = styled.footer`
   background: #ece5dd;
+  display: flex;
   position: fixed;
   bottom: 0;
   height: 60px;
   width: 100%;
   max-width: 450px;
-  display: flex;
   padding: 5px;
 `;
 
 const InputGroup = styled.div`
-  flex: 1 1 80%;
+  flex: 0 1 80%;
+  background-color: lightblue;
   display: flex;
-  align-items: center;
-  input {
-    flex: 1 1 auto;
+  /* align-items: center; */
+  /* input {
+    flex: 0 1 auto;
     font-size: 1em;
     border: 0px;
     height: 44px;
@@ -135,24 +136,25 @@ const InputGroup = styled.div`
     padding: 10px;
     img {
       height: 20px;
-    }
+    } */
   }
 `;
 
 const RecordIcon = styled.div`
-  flex: 1 1 20%;
-  div {
-    height: 50px;
-    width: 50px;
-    background-color: #075e54;
-    border-radius: 50%;
-    margin: 0 auto;
-    display: flex;
+  flex: 0 1 20%;
+  /* height: 50px;
+  width: 50px; */
+  background-color: blue;
+  /* div { */
+    /* background-color: #075e54; */
+    /* border-radius: 50%; */
+    /* margin: 0 auto; */
+    /* display: flex;
     align-items: center;
-    justify-content: center;
-    img {
+    justify-content: center; */
+    /* img {
       height: 20px;
-    }
+    } */
   }
 `;
 
@@ -173,7 +175,8 @@ const ChatScreenFooter = props => {
       </InputGroup>
       <RecordIcon>
         <div>
-          <img src={mic} alt="" />
+          icon
+          {/* <img src={mic} alt="" /> */}
         </div>
       </RecordIcon>
     </StyledChatScreenFooter>
