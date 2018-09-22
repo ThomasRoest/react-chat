@@ -118,7 +118,15 @@ const InputGroup = styled.div`
   flex: 0 1 80%;
   background-color: lightblue;
   display: flex;
-  /* align-items: center; */
+  align-items: center;
+  span {
+    background-color: white;
+    img { height: 20px;}
+  }
+  input {
+    flex: 1 1 auto;
+    font-size: 1em;
+  }
   /* input {
     flex: 0 1 auto;
     font-size: 1em;
