@@ -75,32 +75,31 @@ const ChatScreenHeaderRight = styled.div`
   }
 `;
 
-const OutgoingChatMessage = styled.div`
+const StyledChatMessage = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: ${props =>
+    props.status === "incoming" ? "flex-start" : "flex-end"};
+
   span {
-    max-width: 75%;
+    background-color: ${props =>
+      props.status === "incoming" ? "#fff" : "#dcf8c6"};
     margin-top: 7px;
-    background: #dcf8c6;
-    /* padding: 3px; */
+    max-width: 75%;
     border-radius: 3px;
+    padding: 5px;
+  }
     /* max-width: -moz-fit-content; */
     /* max-width: -webkit-fit-content; */
   }
 `;
 
-const IncomingChatMessage = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  span {
-    margin-top: 7px;
-    max-width: 75%;
-    padding: 3px;
-    border-radius: 3px;
-    background: #fff;
-    /* max-width: -moz-fit-content; */
-    /* max-width: -webkit-fit-content; */
-  }
+const MessageDate = styled.span`
+  color: grey;
+  float: right;
+  font-size: 0.7em;
+  /* position: relative; */
+  /* bottom: 0; */
+  /* right: 0; */
 `;
 
 const StyledChatScreenFooter = styled.footer`
@@ -108,7 +107,7 @@ const StyledChatScreenFooter = styled.footer`
   display: flex;
   position: fixed;
   bottom: 0;
-  height: 60px;
+  height: 50px;
   width: 100%;
   max-width: 450px;
   padding: 5px;
@@ -116,19 +115,10 @@ const StyledChatScreenFooter = styled.footer`
 
 const InputGroup = styled.form`
   flex: 0 1 80%;
-  /* background-color: lightblue; */
   display: flex;
   align-items: center;
-  /* justify-content: center; */
-  /* align-content: center; */
   span {
     flex-basis: 14%;
-    /* align-self: center; */
-    /* flex-grow: 1; */
-    /* flex-basis: 12%; */
-    /* padding-top: 10px; */
-    /* padding-bottom: 10px; */
-    /* padding: 10px; */
     background-color: white;
     height: 40px;
     text-align: center;
@@ -159,10 +149,9 @@ const InputGroup = styled.form`
 
 const RecordIcon = styled.div`
   flex: 0 1 20%;
-  /* background-color: blue; */
   div {
-    height: 50px;
-    width: 50px;
+    height: 43px;
+    width: 43px;
     background-color: #075e54;
     border-radius: 50%;
     margin: 0 auto;
@@ -217,23 +206,18 @@ const SettingsIcon = styled.div`
 `;
 
 const ChatContent = styled.div`
-  /* color: red; */
+  padding-top: 60px;
+  padding-bottom: 50px;
+  padding-right: 13px;
+  padding-left: 13px;
 `;
 
-const ChatMessage = props => {
-  if (props.status === "outgoing") {
-    return (
-      <OutgoingChatMessage>
-        <span>{props.phrase1}</span>
-      </OutgoingChatMessage>
-    );
-  } else {
-    return (
-      <IncomingChatMessage>
-        <span>{props.phrase1}</span>
-      </IncomingChatMessage>
-    );
-  }
+const ChatMessage = ({ status, phrase1 }) => {
+  return (
+    <StyledChatMessage status={status}>
+      <span>{phrase1}</span>
+    </StyledChatMessage>
+  );
 };
 
 type State = {
@@ -266,7 +250,7 @@ export class ChatScreen extends Component<Props, State> {
                 alt="user avatar"
               />
             </a>
-            <a href="">pete</a>
+            <span>pete</span>
           </ChatScreenHeaderLeft>
           <ChatScreenHeaderRight>
             <a>

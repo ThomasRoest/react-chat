@@ -19,12 +19,12 @@ injectGlobal`
    }
 `;
 
-const Settings = styled.div`
-  position: absolute;
-  top: 10px;
-  background: white;
-  right: 0;
-`;
+// const Settings = styled.div`
+//   position: absolute;
+//   top: 10px;
+//   background: white;
+//   right: 0;
+// `;
 
 const StyledApp = styled.div`
   max-width: 450px;
@@ -41,7 +41,7 @@ type State = {
 class App extends React.Component<null, State> {
   state = {
     viewState: "2",
-    chatScreenPosition: "0"
+    chatScreenPosition: "1"
   };
 
   changeViewState = (event: KeyboardEvent) => {
@@ -69,7 +69,6 @@ class App extends React.Component<null, State> {
           showChatScreen={this.showChatScreen}
           viewState={this.state.viewState}
         />
-        {/* <Settings>hello im the settings</Settings> */}
         <ChatScreen
           chatScreenPosition={this.state.chatScreenPosition}
           closeChatScreen={this.closeChatScreen}
