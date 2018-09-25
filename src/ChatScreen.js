@@ -30,6 +30,7 @@ const StyledChatScreen = styled.div`
 const ChatScreenHeader = styled.div`
   display: flex;
   color: white;
+  z-index: 1;
   justify-content: space-between;
   align-items: center;
   background: #075e54;
@@ -79,27 +80,26 @@ const StyledChatMessage = styled.div`
   display: flex;
   justify-content: ${props =>
     props.status === "incoming" ? "flex-start" : "flex-end"};
+  
 
   span {
     background-color: ${props =>
       props.status === "incoming" ? "#fff" : "#dcf8c6"};
     margin-top: 7px;
     max-width: 75%;
-    border-radius: 3px;
+    border-radius: ${props =>
+      props.status === "incoming" ? "0px 3px 3px 3px" : "3px 0px 3px 3px"};
     padding: 5px;
+    span {
+      padding: 0px;
+      color: #858B90;
+      float: right;
+      font-size: .8em;
+    }
   }
     /* max-width: -moz-fit-content; */
     /* max-width: -webkit-fit-content; */
   }
-`;
-
-const MessageDate = styled.span`
-  color: grey;
-  float: right;
-  font-size: 0.7em;
-  /* position: relative; */
-  /* bottom: 0; */
-  /* right: 0; */
 `;
 
 const StyledChatScreenFooter = styled.footer`
@@ -114,7 +114,7 @@ const StyledChatScreenFooter = styled.footer`
 `;
 
 const InputGroup = styled.form`
-  flex: 0 1 80%;
+  flex: 0 1 85%;
   display: flex;
   align-items: center;
   span {
@@ -148,7 +148,7 @@ const InputGroup = styled.form`
 `;
 
 const RecordIcon = styled.div`
-  flex: 0 1 20%;
+  flex: 0 1 15%;
   div {
     height: 43px;
     width: 43px;
@@ -189,6 +189,26 @@ const ChatScreenFooter = props => {
   );
 };
 
+const ArrowLeft = styled.div`
+  position: relative;
+  top: 7px;
+  width: 0;
+  height: 0;
+  border-top: 0px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 15px solid #fff;
+`;
+
+const ArrowRight = styled.div`
+  position: relative;
+  top: 7px;
+  width: 0;
+  height: 0;
+  border-top: 0px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 15px solid #dcf8c6;
+`;
+
 const SettingsIcon = styled.div`
   /* flex-basis: 10%; */
   display: flex;
@@ -208,14 +228,19 @@ const SettingsIcon = styled.div`
 const ChatContent = styled.div`
   padding-top: 60px;
   padding-bottom: 50px;
-  padding-right: 13px;
-  padding-left: 13px;
+  padding-right: 5px;
+  padding-left: 5px;
 `;
 
 const ChatMessage = ({ status, phrase1 }) => {
   return (
     <StyledChatMessage status={status}>
-      <span>{phrase1}</span>
+      {status === "incoming" && <ArrowLeft />}
+      <span>
+        {phrase1}
+        <span>25:34</span>
+      </span>
+      {status === "outgoing" && <ArrowRight />}
     </StyledChatMessage>
   );
 };
