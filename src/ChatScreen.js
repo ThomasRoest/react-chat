@@ -3,20 +3,20 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
 import { messages } from "./messages.js";
+import ChatScreenFooter from "./ChatScreenFooter";
 import phone from "./images/phone.svg";
 import arrow from "./images/arrow-left2.svg";
 import video from "./images/video-camera.svg";
-import camera from "./images/camera-grey.svg";
-import attachment from "./images/attachment.svg";
-import happy from "./images/happy.svg";
-import mic from "./images/mic.svg";
+// import "./chatscreen.css";
+// import
 
 const StyledChatScreen = styled.div`
   background-color: #ece5dd;
   position: absolute;
   top: 0;
   z-index: 1;
-  transform: scale(0);
+  /* box-shadow: 0px 0px 50px lightgrey; */
+  /* transform: scale(0);
   opacity: 0;
   transition: opacity 0.1s linear;
   ${props =>
@@ -24,7 +24,7 @@ const StyledChatScreen = styled.div`
     css`
       transform: none;
       opacity: 1;
-    `};
+    `}; */
 `;
 
 const ChatScreenHeader = styled.div`
@@ -102,93 +102,6 @@ const StyledChatMessage = styled.div`
   }
 `;
 
-const StyledChatScreenFooter = styled.footer`
-  background: #ece5dd;
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  height: 50px;
-  width: 100%;
-  max-width: 450px;
-  padding: 5px;
-`;
-
-const InputGroup = styled.form`
-  flex: 0 1 85%;
-  display: flex;
-  align-items: center;
-  span {
-    flex-basis: 14%;
-    background-color: white;
-    height: 40px;
-    text-align: center;
-    img { 
-      margin-top: 10px;
-      height: 20px; 
-    }
-    &:first-child {
-    border-radius: 50% 0% 0% 50%;
-    }
-    &:last-child {
-      border-radius: 0% 50% 50% 0%;
-    }
-    
-  }
-  input {
-    /* https://stackoverflow.com/questions/46684636/html-inputs-ignore-flex-basis-css-property */
-    flex-basis: 58%;
-    min-width: 0
-    appearance:none
-    height: 40px;
-    border: 0px;
-    background-color: #fff;
-    font-size: 1em;
-    }
-  }
-`;
-
-const RecordIcon = styled.div`
-  flex: 0 1 15%;
-  div {
-    height: 43px;
-    width: 43px;
-    background-color: #075e54;
-    border-radius: 50%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      height: 20px;
-    }
-  }
-`;
-
-const ChatScreenFooter = props => {
-  return (
-    <StyledChatScreenFooter>
-      <InputGroup onSubmit={e => console.log(e.preventDefault())}>
-        <span>
-          <img src={happy} alt="" />
-        </span>
-        <input type="text" />
-        <span>
-          <img src={attachment} alt="" />
-        </span>
-        <span>
-          <img src={camera} alt="" />
-        </span>
-      </InputGroup>
-      <RecordIcon>
-        {/* // conditionally render submit button */}
-        <div>
-          <img src={mic} alt="" />
-        </div>
-      </RecordIcon>
-    </StyledChatScreenFooter>
-  );
-};
-
 const ArrowLeft = styled.div`
   position: relative;
   top: 7px;
@@ -253,17 +166,25 @@ type Props = {
   chatScreenPosition: string,
   closeChatScreen: Function
 };
-
-export class ChatScreen extends Component<Props, State> {
+class ChatScreen extends Component<Props, State> {
+  myRef = React.createRef();
+  chatRef = React.createRef();
+  inputRef = React.createRef();
   state = {
     messages: []
   };
+
   componentDidMount() {
-    this.setState({ messages: ["hello there"] });
+    window.scrollTo(0, document.body.scrollHeight);
+    this.forceUpdate();
   }
   render() {
     return (
-      <StyledChatScreen chatScreenPosition={this.props.chatScreenPosition}>
+      <StyledChatScreen
+        className="chatscreen"
+        ref={this.myRef}
+        // chatScreenPosition={this.props.chatScreenPosition}
+      >
         <ChatScreenHeader>
           <ChatScreenHeaderLeft>
             <a onClick={this.props.closeChatScreen}>
@@ -292,7 +213,8 @@ export class ChatScreen extends Component<Props, State> {
             </SettingsIcon>
           </ChatScreenHeaderRight>
         </ChatScreenHeader>
-        <ChatContent className="element">
+        <ChatContent ref={this.chatRef} className="element">
+          {/* < onClick={this.handleScroll}>scroll down</button> */}
           {messages.map(item => (
             <ChatMessage key={item.id} {...item} />
           ))}

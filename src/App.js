@@ -15,22 +15,16 @@ injectGlobal`
    body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    background-color: #fafafa;
+    background-color: #f1f1f2;
    }
 `;
-
-// const Settings = styled.div`
-//   position: absolute;
-//   top: 10px;
-//   background: white;
-//   right: 0;
-// `;
 
 const StyledApp = styled.div`
   max-width: 450px;
   margin: 0 auto;
   position: relative;
-  box-shadow: 0px 0px 50px lightgrey;
+
+  /* box-shadow: 0px 0px 50px lightgrey; */
 `;
 
 type State = {
@@ -69,10 +63,12 @@ class App extends React.Component<null, State> {
           showChatScreen={this.showChatScreen}
           viewState={this.state.viewState}
         />
-        <ChatScreen
-          chatScreenPosition={this.state.chatScreenPosition}
-          closeChatScreen={this.closeChatScreen}
-        />
+        {this.state.chatScreenPosition === "1" && (
+          <ChatScreen
+            chatScreenPosition={this.state.chatScreenPosition}
+            closeChatScreen={this.closeChatScreen}
+          />
+        )}
       </StyledApp>
     );
   }

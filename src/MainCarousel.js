@@ -13,6 +13,7 @@ const Carousel = styled.div`
   overflow-x: hidden;
   position: relative;
   padding: 0;
+  background-color: #fafafa;
 `;
 
 const CarouselTrack = styled.div`
