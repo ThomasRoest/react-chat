@@ -40,7 +40,6 @@ const InputGroup = styled.form`
     
   }
   input {
-    /* https://stackoverflow.com/questions/46684636/html-inputs-ignore-flex-basis-css-property */
     flex-basis: 58%;
     min-width: 0
     appearance:none
@@ -69,11 +68,13 @@ const RecordIcon = styled.div`
   }
 `;
 
+type Props = {};
+
 class ChatScreenFooter extends Component<Props> {
   render() {
     return (
-      <StyledChatScreenFooter onClick={() => console.log("eheheh")}>
-        <InputGroup onSubmit={e => console.log(e.preventDefault())}>
+      <StyledChatScreenFooter>
+        <InputGroup>
           <span>
             <img src={happy} alt="" />
           </span>

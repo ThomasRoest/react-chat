@@ -1,31 +1,13 @@
 //@flow
 
 import React, { Component } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { messages } from "./messages.js";
 import ChatScreenFooter from "./ChatScreenFooter";
 import phone from "./images/phone.svg";
 import arrow from "./images/arrow-left2.svg";
 import video from "./images/video-camera.svg";
-// import "./chatscreen.css";
-// import
-
-const StyledChatScreen = styled.div`
-  background-color: #ece5dd;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  /* box-shadow: 0px 0px 50px lightgrey; */
-  /* transform: scale(0);
-  opacity: 0;
-  transition: opacity 0.1s linear;
-  ${props =>
-    props.chatScreenPosition === "1" &&
-    css`
-      transform: none;
-      opacity: 1;
-    `}; */
-`;
+import "./chatscreen.css";
 
 const ChatScreenHeader = styled.div`
   display: flex;
@@ -163,8 +145,8 @@ type State = {
 };
 
 type Props = {
-  chatScreenPosition: string,
-  closeChatScreen: Function
+  closeChatScreen: Function,
+  styles: Object
 };
 class ChatScreen extends Component<Props, State> {
   myRef = React.createRef();
@@ -175,16 +157,14 @@ class ChatScreen extends Component<Props, State> {
   };
 
   componentDidMount() {
-    window.scrollTo(0, document.body.scrollHeight);
-    this.forceUpdate();
+    // setTimeout(() => {
+    //   window.scrollTo(0, document.body.scrollHeight);
+    //   this.forceUpdate();
+    // }, 200);
   }
   render() {
     return (
-      <StyledChatScreen
-        className="chatscreen"
-        ref={this.myRef}
-        // chatScreenPosition={this.props.chatScreenPosition}
-      >
+      <div style={this.props.styles} className="chatscreen" ref={this.myRef}>
         <ChatScreenHeader>
           <ChatScreenHeaderLeft>
             <a onClick={this.props.closeChatScreen}>
@@ -214,13 +194,12 @@ class ChatScreen extends Component<Props, State> {
           </ChatScreenHeaderRight>
         </ChatScreenHeader>
         <ChatContent ref={this.chatRef} className="element">
-          {/* < onClick={this.handleScroll}>scroll down</button> */}
           {messages.map(item => (
             <ChatMessage key={item.id} {...item} />
           ))}
         </ChatContent>
         <ChatScreenFooter />
-      </StyledChatScreen>
+      </div>
     );
   }
 }

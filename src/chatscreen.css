@@ -1,0 +1,18 @@
+/* for use with react spring */
+
+.btn-temp:first-child {
+  position: fixed;
+  right: 0;
+}
+
+.btn-temp {
+  position: fixed;
+  right: 100px;
+}
+
+.chatscreen {
+  background-color: #ece5dd;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}

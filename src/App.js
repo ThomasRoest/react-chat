@@ -3,6 +3,8 @@
 import React from "react";
 import { injectGlobal } from "styled-components";
 import styled from "styled-components";
+import { Transition } from "react-spring";
+import { TimingAnimation, Easing } from "react-spring/dist/addons.cjs";
 import HeaderNav from "./HeaderNav";
 import HeaderTop from "./HeaderTop";
 import MainCarousel from "./MainCarousel";
@@ -23,19 +25,18 @@ const StyledApp = styled.div`
   max-width: 450px;
   margin: 0 auto;
   position: relative;
-
   /* box-shadow: 0px 0px 50px lightgrey; */
 `;
 
 type State = {
   viewState: string,
-  chatScreenPosition: string
+  chatScreenIsVisible: boolean
 };
 
 class App extends React.Component<null, State> {
   state = {
     viewState: "2",
-    chatScreenPosition: "0"
+    chatScreenIsVisible: false
   };
 
   changeViewState = (event: KeyboardEvent) => {
@@ -44,11 +45,12 @@ class App extends React.Component<null, State> {
   };
 
   showChatScreen = () => {
-    this.setState({ chatScreenPosition: "1" });
+    // console.log("hello there");
+    this.setState({ chatScreenIsVisible: true });
   };
 
   closeChatScreen = () => {
-    this.setState({ chatScreenPosition: "0" });
+    this.setState({ chatScreenIsVisible: false });
   };
 
   render() {
@@ -63,12 +65,22 @@ class App extends React.Component<null, State> {
           showChatScreen={this.showChatScreen}
           viewState={this.state.viewState}
         />
-        {this.state.chatScreenPosition === "1" && (
-          <ChatScreen
-            chatScreenPosition={this.state.chatScreenPosition}
-            closeChatScreen={this.closeChatScreen}
-          />
-        )}
+
+        <Transition
+          from={{ opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}
+          impl={TimingAnimation}
+          config={{ duration: 100, easing: Easing.linear }}
+        >
+          {this.state.chatScreenIsVisible &&
+            (styles => (
+              <ChatScreen
+                closeChatScreen={this.closeChatScreen}
+                styles={styles}
+              />
+            ))}
+        </Transition>
       </StyledApp>
     );
   }
