@@ -13,6 +13,7 @@
 .chatscreen {
   background-color: #ece5dd;
   position: absolute;
+  /* opacity: 1; */
   top: 0;
   z-index: 1;
 }

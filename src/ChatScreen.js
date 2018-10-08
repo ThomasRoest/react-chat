@@ -7,7 +7,15 @@ import ChatScreenFooter from "./ChatScreenFooter";
 import phone from "./images/phone.svg";
 import arrow from "./images/arrow-left2.svg";
 import video from "./images/video-camera.svg";
-import "./chatscreen.css";
+// import "./chatscreen.css";
+
+const StyledChatScreen = styled.div`
+  background-color: #ece5dd;
+  position: absolute;
+  /* opacity: 1; */
+  top: 0;
+  z-index: 1;
+`;
 
 const ChatScreenHeader = styled.div`
   display: flex;
@@ -125,6 +133,12 @@ const ChatContent = styled.div`
   padding-bottom: 50px;
   padding-right: 5px;
   padding-left: 5px;
+
+  overflow: hidden;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 const ChatMessage = ({ status, phrase1 }) => {
@@ -149,22 +163,37 @@ type Props = {
   styles: Object
 };
 class ChatScreen extends Component<Props, State> {
-  myRef = React.createRef();
-  chatRef = React.createRef();
-  inputRef = React.createRef();
   state = {
     messages: []
   };
 
   componentDidMount() {
+    this.setState({ messages });
     // setTimeout(() => {
     //   window.scrollTo(0, document.body.scrollHeight);
     //   this.forceUpdate();
-    // }, 200);
+    // }, 10);
   }
+
+  componentDidUpdate() {
+    window.scrollTo(0, document.body.scrollHeight);
+    console.log("did update......????");
+  }
+
+  addmessage = (formvalue: string) => {
+    const newMessages = [...this.state.messages];
+    const message = {
+      id: Date.now(),
+      phrase1: formvalue,
+      status: "outgoing"
+    };
+    window.scrollTo(0, document.body.scrollHeight);
+    this.setState({ messages: newMessages.concat(message) });
+  };
   render() {
     return (
-      <div style={this.props.styles} className="chatscreen" ref={this.myRef}>
+      // <div style={this.props.styles} className="chatscreen" ref={this.myRef}>
+      <StyledChatScreen>
         <ChatScreenHeader>
           <ChatScreenHeaderLeft>
             <a onClick={this.props.closeChatScreen}>
@@ -193,13 +222,13 @@ class ChatScreen extends Component<Props, State> {
             </SettingsIcon>
           </ChatScreenHeaderRight>
         </ChatScreenHeader>
-        <ChatContent ref={this.chatRef} className="element">
-          {messages.map(item => (
+        <ChatContent>
+          {this.state.messages.map(item => (
             <ChatMessage key={item.id} {...item} />
           ))}
         </ChatContent>
-        <ChatScreenFooter />
-      </div>
+        <ChatScreenFooter addMessage={this.addmessage} />
+      </StyledChatScreen>
     );
   }
 }

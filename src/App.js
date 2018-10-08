@@ -66,7 +66,7 @@ class App extends React.Component<null, State> {
           viewState={this.state.viewState}
         />
 
-        <Transition
+        {/* <Transition
           from={{ opacity: 0 }}
           enter={{ opacity: 1 }}
           leave={{ opacity: 0 }}
@@ -80,7 +80,11 @@ class App extends React.Component<null, State> {
                 styles={styles}
               />
             ))}
-        </Transition>
+        </Transition> */}
+
+        {this.state.chatScreenIsVisible && (
+          <ChatScreen closeChatScreen={this.closeChatScreen} />
+        )}
       </StyledApp>
     );
   }

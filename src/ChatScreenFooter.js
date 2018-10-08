@@ -18,7 +18,7 @@ const StyledChatScreenFooter = styled.footer`
   padding: 5px;
 `;
 
-const InputGroup = styled.form`
+const StyledForm = styled.form`
   flex: 0 1 85%;
   display: flex;
   align-items: center;
@@ -68,24 +68,48 @@ const RecordIcon = styled.div`
   }
 `;
 
-type Props = {};
+type Props = {
+  addMessage: Function
+};
 
-class ChatScreenFooter extends Component<Props> {
+type State = {
+  formValue: string
+};
+
+class ChatScreenFooter extends Component<Props, State> {
+  state = {
+    formValue: ""
+  };
+
+  handleChange = event => {
+    this.setState({ formValue: event.target.value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.addMessage(this.state.formValue);
+    this.setState({ formValue: "" });
+  };
   render() {
     return (
       <StyledChatScreenFooter>
-        <InputGroup>
+        {/* <button onClick={this.props.addMessage}>add</button> */}
+        <StyledForm onSubmit={this.handleSubmit}>
           <span>
             <img src={happy} alt="" />
           </span>
-          <input type="text" />
+          <input
+            type="text"
+            onChange={this.handleChange}
+            value={this.state.formValue}
+          />
           <span>
             <img src={attachment} alt="" />
           </span>
           <span>
             <img src={camera} alt="" />
           </span>
-        </InputGroup>
+        </StyledForm>
         <RecordIcon>
           {/* // conditionally render submit button */}
           <div>
