@@ -106,8 +106,7 @@ const messages = [
   },
   {
     id: 92113,
-    phrase1:
-      "You can't reboot the system without indexing the optical THX matrix!",
+    phrase1: "hello",
     status: "outgoing"
   },
   {

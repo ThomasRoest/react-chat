@@ -12,7 +12,6 @@ import video from "./images/video-camera.svg";
 const StyledChatScreen = styled.div`
   background-color: #ece5dd;
   position: absolute;
-  /* opacity: 1; */
   top: 0;
   z-index: 1;
 `;
@@ -70,8 +69,6 @@ const StyledChatMessage = styled.div`
   display: flex;
   justify-content: ${props =>
     props.status === "incoming" ? "flex-start" : "flex-end"};
-  
-
   span {
     background-color: ${props =>
       props.status === "incoming" ? "#fff" : "#dcf8c6"};
@@ -81,14 +78,12 @@ const StyledChatMessage = styled.div`
       props.status === "incoming" ? "0px 3px 3px 3px" : "3px 0px 3px 3px"};
     padding: 5px;
     span {
-      padding: 0px;
+      padding: 0 0 0 8px;
       color: #858B90;
       float: right;
       font-size: .8em;
     }
   }
-    /* max-width: -moz-fit-content; */
-    /* max-width: -webkit-fit-content; */
   }
 `;
 
@@ -169,10 +164,6 @@ class ChatScreen extends Component<Props, State> {
 
   componentDidMount() {
     this.setState({ messages });
-    // setTimeout(() => {
-    //   window.scrollTo(0, document.body.scrollHeight);
-    //   this.forceUpdate();
-    // }, 10);
   }
 
   componentDidUpdate() {

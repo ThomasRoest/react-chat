@@ -6,6 +6,7 @@ import camera from "./images/camera-grey.svg";
 import attachment from "./images/attachment.svg";
 import happy from "./images/happy.svg";
 import mic from "./images/mic.svg";
+import arrow from "./images/arrow-right.svg";
 
 const StyledChatScreenFooter = styled.footer`
   background: #ece5dd;
@@ -93,7 +94,6 @@ class ChatScreenFooter extends Component<Props, State> {
   render() {
     return (
       <StyledChatScreenFooter>
-        {/* <button onClick={this.props.addMessage}>add</button> */}
         <StyledForm onSubmit={this.handleSubmit}>
           <span>
             <img src={happy} alt="" />
@@ -111,10 +111,16 @@ class ChatScreenFooter extends Component<Props, State> {
           </span>
         </StyledForm>
         <RecordIcon>
-          {/* // conditionally render submit button */}
-          <div>
-            <img src={mic} alt="" />
-          </div>
+          {this.state.formValue.length >= 1 && (
+            <div onClick={this.handleSubmit}>
+              <img src={arrow} alt="" />
+            </div>
+          )}
+          {this.state.formValue.length === 0 && (
+            <div>
+              <img src={mic} alt="" />
+            </div>
+          )}
         </RecordIcon>
       </StyledChatScreenFooter>
     );

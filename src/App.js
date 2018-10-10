@@ -3,8 +3,8 @@
 import React from "react";
 import { injectGlobal } from "styled-components";
 import styled from "styled-components";
-import { Transition } from "react-spring";
-import { TimingAnimation, Easing } from "react-spring/dist/addons.cjs";
+// import { Transition } from "react-spring";
+// import { TimingAnimation, Easing } from "react-spring/dist/addons.cjs";
 import HeaderNav from "./HeaderNav";
 import HeaderTop from "./HeaderTop";
 import MainCarousel from "./MainCarousel";
@@ -25,7 +25,6 @@ const StyledApp = styled.div`
   max-width: 450px;
   margin: 0 auto;
   position: relative;
-  /* box-shadow: 0px 0px 50px lightgrey; */
 `;
 
 type State = {
@@ -45,7 +44,6 @@ class App extends React.Component<null, State> {
   };
 
   showChatScreen = () => {
-    // console.log("hello there");
     this.setState({ chatScreenIsVisible: true });
   };
 
