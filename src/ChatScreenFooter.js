@@ -10,7 +10,7 @@ import arrow from "./images/arrow-right.svg";
 
 const StyledChatScreenFooter = styled.footer`
   background: #ece5dd;
-  display: flex;
+  /* display: flex; */
   position: fixed;
   bottom: 0;
   height: 50px;
@@ -20,43 +20,70 @@ const StyledChatScreenFooter = styled.footer`
 `;
 
 const StyledForm = styled.form`
-  flex: 0 1 85%;
+  /* flex: 0 1 85%; */
   display: flex;
-  align-items: center;
-  span {
-    flex-basis: 14%;
+  /* align-items: center; */
+  justify-content: flex-start;
+  
+  .input-addon {
+    /* flex-basis: 14%; */
+    min-width: 40px;
     background-color: white;
     height: 40px;
     text-align: center;
-    img { 
+    img {
       margin-top: 10px;
-      height: 20px; 
+      height: 20px;
     }
-    &:first-child {
-    border-radius: 50% 0% 0% 50%;
+    &:nth-child(1) {
+      border-radius: 50% 0% 0% 50%;
     }
-    &:last-child {
+    &:nth-child(4) {
       border-radius: 0% 50% 50% 0%;
     }
-    
+    /* &:last-child {
+      background-color: red;
+    } */
   }
+
   input {
-    flex-basis: 58%;
-    min-width: 0
+    flex: 1 1 auto;
+    /* flex-basis: 58%; */
+    min-width: 0;
     appearance:none
     height: 40px;
     border: 0px;
     background-color: #fff;
     font-size: 1em;
-    }
   }
+
+  
 `;
 
 const RecordIcon = styled.div`
-  flex: 0 1 15%;
+  padding-left: 5px;
+  button[type="submit"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #075e54;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0px;
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    img {
+      height: 20px;
+      height: 20px;
+    }
+  }
   div {
-    height: 43px;
-    width: 43px;
+    height: 40px;
+    width: 40px;
     background-color: #075e54;
     border-radius: 50%;
     margin: 0 auto;
@@ -95,7 +122,7 @@ class ChatScreenFooter extends Component<Props, State> {
     return (
       <StyledChatScreenFooter>
         <StyledForm onSubmit={this.handleSubmit}>
-          <span>
+          <span className="input-addon">
             <img src={happy} alt="" />
           </span>
           <input
@@ -103,25 +130,25 @@ class ChatScreenFooter extends Component<Props, State> {
             onChange={this.handleChange}
             value={this.state.formValue}
           />
-          <span>
+          <span className="input-addon">
             <img src={attachment} alt="" />
           </span>
-          <span>
+          <span className="input-addon">
             <img src={camera} alt="" />
           </span>
+          <RecordIcon>
+            {this.state.formValue.length >= 1 && (
+              <button type="submit">
+                <img src={arrow} alt="" />
+              </button>
+            )}
+            {this.state.formValue.length === 0 && (
+              <div>
+                <img src={mic} alt="" />
+              </div>
+            )}
+          </RecordIcon>
         </StyledForm>
-        <RecordIcon>
-          {this.state.formValue.length >= 1 && (
-            <div onClick={this.handleSubmit}>
-              <img src={arrow} alt="" />
-            </div>
-          )}
-          {this.state.formValue.length === 0 && (
-            <div>
-              <img src={mic} alt="" />
-            </div>
-          )}
-        </RecordIcon>
       </StyledChatScreenFooter>
     );
   }

@@ -13,6 +13,7 @@ import ChatScreen from "./ChatScreen";
 injectGlobal`
    *, *:before, *:after {
     box-sizing: border-box;
+    /* outline: 1px solid gray; */
   }
    body {
     font-family: 'Roboto', sans-serif;
@@ -35,7 +36,7 @@ type State = {
 class App extends React.Component<null, State> {
   state = {
     viewState: "2",
-    chatScreenIsVisible: false
+    chatScreenIsVisible: true
   };
 
   changeViewState = (event: KeyboardEvent) => {
