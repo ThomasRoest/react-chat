@@ -54,7 +54,7 @@ const ContentBottomRow = styled.div`
     font-size: 0.9em;
     white-space: nowrap;
     overflow: hidden;
-    max-width: 250px;
+    max-width: 300px;
     text-overflow: ellipsis;
   }
   span {
@@ -83,7 +83,7 @@ const ChatListItem = ({ title, preview, avatar, showChatScreen }: Props) => (
       </ContentTopRow>
       <ContentBottomRow>
         <span>{preview}</span>
-        <span>icon</span>
+        {/* <span>icon</span> */}
       </ContentBottomRow>
     </ListItemContent>
   </StyledListItem>
