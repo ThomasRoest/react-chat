@@ -36,7 +36,7 @@ class App extends React.Component<null, State> {
     chatScreenIsVisible: false
   };
 
-  changeViewState = (event: KeyboardEvent) => {
+  changeViewState = (event: SyntheticInputEvent<HTMLDataListElement>) => {
     const newState = event.target.dataset.nav;
     this.setState({ viewState: newState });
   };

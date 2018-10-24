@@ -99,11 +99,11 @@ class ChatScreenFooter extends Component<Props, State> {
     formValue: ""
   };
 
-  handleChange = event => {
+  handleChange = (event: SyntheticInputEvent<HTMLInputElement>) => {
     this.setState({ formValue: event.target.value });
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event: Event) => {
     event.preventDefault();
     this.props.addMessage(this.state.formValue);
     this.setState({ formValue: "" });

@@ -152,8 +152,7 @@ type State = {
 };
 
 type Props = {
-  closeChatScreen: Function,
-  styles: Object
+  closeChatScreen: Function
 };
 class ChatScreen extends Component<Props, State> {
   state = {
