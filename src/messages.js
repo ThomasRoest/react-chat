@@ -77,7 +77,7 @@ const messages = [
   {
     id: 2250,
     phrase1:
-      "synthesizeTry to calculate the FTP driver, maybe it will synthesize the open-source capacitor!",
+      "Try to calculate the FTP driver, maybe it will synthesize the open-source capacitor!",
     status: "incoming"
   },
   {
@@ -89,7 +89,7 @@ const messages = [
   {
     id: 61809,
     phrase1:
-      "overrideUse the 1080p SSL panel, then you can generate the optical alarm!",
+      "Use the 1080p SSL panel, then you can generate the optical alarm!",
     status: "incoming"
   },
   {
@@ -101,7 +101,7 @@ const messages = [
   {
     id: 51630,
     phrase1:
-      "overrideI'll connect the 1080p AI capacitor, that should microchip the RAM panel!",
+      "I'll connect the 1080p AI capacitor, that should microchip the RAM panel!",
     status: "incoming"
   },
   {
@@ -112,7 +112,7 @@ const messages = [
   {
     id: 63181,
     phrase1:
-      "inputIf we connect the program, we can get to the THX sensor through the bluetooth COM bus!",
+      "If we connect the program, we can get to the THX sensor through the bluetooth COM bus!",
     status: "incoming"
   }
 ];

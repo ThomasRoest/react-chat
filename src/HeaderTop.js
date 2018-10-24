@@ -49,7 +49,7 @@ const HeaderTop = () => {
   return (
     <StyledHeaderTop>
       <div>
-        <h1>Chat app test</h1>
+        <h1>React Chat</h1>
       </div>
       <SearchIcon>
         <img src={search} alt="search" />

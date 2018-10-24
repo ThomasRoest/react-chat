@@ -27,13 +27,15 @@ const StyledApp = styled.div`
 
 type State = {
   viewState: string,
-  chatScreenIsVisible: boolean
+  chatScreenIsVisible: boolean,
+  currentChatId: ?number
 };
 
 class App extends React.Component<null, State> {
   state = {
     viewState: "2",
-    chatScreenIsVisible: false
+    chatScreenIsVisible: false,
+    currentChatId: null
   };
 
   changeViewState = (event: SyntheticInputEvent<HTMLDataListElement>) => {
@@ -41,12 +43,12 @@ class App extends React.Component<null, State> {
     this.setState({ viewState: newState });
   };
 
-  showChatScreen = () => {
-    this.setState({ chatScreenIsVisible: true });
+  showChatScreen = id => {
+    this.setState({ chatScreenIsVisible: true, currentChatId: id });
   };
 
   closeChatScreen = () => {
-    this.setState({ chatScreenIsVisible: false });
+    this.setState({ chatScreenIsVisible: false, currentChatId: null });
   };
 
   render() {
@@ -63,7 +65,10 @@ class App extends React.Component<null, State> {
         />
 
         {this.state.chatScreenIsVisible && (
-          <ChatScreen closeChatScreen={this.closeChatScreen} />
+          <ChatScreen
+            currentChatId={this.state.currentChatId}
+            closeChatScreen={this.closeChatScreen}
+          />
         )}
       </StyledApp>
     );

@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { messages } from "./messages.js";
+import { chats } from "./chats.js";
 import ChatScreenFooter from "./ChatScreenFooter";
 import phone from "./images/phone.svg";
 import arrow from "./images/arrow-left2.svg";
@@ -30,9 +31,9 @@ const ChatScreenHeader = styled.div`
 `;
 
 const ChatScreenHeaderLeft = styled.div`
-  flex-basis: 30%;
+  flex-basis: 70%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   a:first-child {
     padding-left: 10px;
@@ -44,6 +45,7 @@ const ChatScreenHeaderLeft = styled.div`
     img {
       width: 40px;
       height: 40px;
+      margin: 0 5px 0 5px;
       border-radius: 50%;
     }
   }
@@ -152,7 +154,8 @@ type State = {
 };
 
 type Props = {
-  closeChatScreen: Function
+  closeChatScreen: Function,
+  currentChatId: number
 };
 class ChatScreen extends Component<Props, State> {
   state = {
@@ -165,7 +168,6 @@ class ChatScreen extends Component<Props, State> {
 
   componentDidUpdate() {
     window.scrollTo(0, document.body.scrollHeight);
-    console.log("did update......????");
   }
 
   addmessage = (formvalue: string) => {
@@ -179,6 +181,12 @@ class ChatScreen extends Component<Props, State> {
     this.setState({ messages: newMessages.concat(message) });
   };
   render() {
+    let msg;
+    if (this.props.currentChatId) {
+      msg = chats.find(item => item.id === this.props.currentChatId);
+    } else {
+      msg = chats.find(item => item.id === 64138);
+    }
     return (
       <StyledChatScreen>
         <ChatScreenHeader>
@@ -187,12 +195,9 @@ class ChatScreen extends Component<Props, State> {
               <img src={arrow} alt="arrow left icon" />
             </a>
             <a>
-              <img
-                src="https://s3.amazonaws.com/uifaces/faces/twitter/gauchomatt/128.jpg"
-                alt="user avatar"
-              />
+              <img src={msg.avatar} alt={msg.title} />
             </a>
-            <span>pete</span>
+            <span>{msg.title}</span>
           </ChatScreenHeaderLeft>
           <ChatScreenHeaderRight>
             <a>

@@ -69,8 +69,14 @@ type Props = {
   showChatScreen: Function
 };
 
-const ChatListItem = ({ title, preview, avatar, showChatScreen }: Props) => (
-  <StyledListItem onClick={showChatScreen}>
+const ChatListItem = ({
+  id,
+  title,
+  preview,
+  avatar,
+  showChatScreen
+}: Props) => (
+  <StyledListItem onClick={() => showChatScreen(id)}>
     <ListItemAvatar>
       <img src={avatar} alt={title} />
     </ListItemAvatar>
