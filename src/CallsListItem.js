@@ -14,7 +14,6 @@ const StyledListItem = styled.a`
 
 const ListItemAvatar = styled.div`
   flex-basis: 20%;
-  /* background-color: yellow; */
   padding-left: 10px;
   padding-right: 5px;
   img {

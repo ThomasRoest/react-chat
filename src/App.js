@@ -3,8 +3,6 @@
 import React from "react";
 import { injectGlobal } from "styled-components";
 import styled from "styled-components";
-// import { Transition } from "react-spring";
-// import { TimingAnimation, Easing } from "react-spring/dist/addons.cjs";
 import HeaderNav from "./HeaderNav";
 import HeaderTop from "./HeaderTop";
 import MainCarousel from "./MainCarousel";
@@ -13,7 +11,6 @@ import ChatScreen from "./ChatScreen";
 injectGlobal`
    *, *:before, *:after {
     box-sizing: border-box;
-    /* outline: 1px solid gray; */
   }
    body {
     font-family: 'Roboto', sans-serif;
@@ -64,22 +61,6 @@ class App extends React.Component<null, State> {
           showChatScreen={this.showChatScreen}
           viewState={this.state.viewState}
         />
-
-        {/* <Transition
-          from={{ opacity: 0 }}
-          enter={{ opacity: 1 }}
-          leave={{ opacity: 0 }}
-          impl={TimingAnimation}
-          config={{ duration: 100, easing: Easing.linear }}
-        >
-          {this.state.chatScreenIsVisible &&
-            (styles => (
-              <ChatScreen
-                closeChatScreen={this.closeChatScreen}
-                styles={styles}
-              />
-            ))}
-        </Transition> */}
 
         {this.state.chatScreenIsVisible && (
           <ChatScreen closeChatScreen={this.closeChatScreen} />

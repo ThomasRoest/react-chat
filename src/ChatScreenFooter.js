@@ -10,7 +10,6 @@ import arrow from "./images/arrow-right.svg";
 
 const StyledChatScreenFooter = styled.footer`
   background: #ece5dd;
-  /* display: flex; */
   position: fixed;
   bottom: 0;
   height: 50px;
@@ -20,13 +19,10 @@ const StyledChatScreenFooter = styled.footer`
 `;
 
 const StyledForm = styled.form`
-  /* flex: 0 1 85%; */
   display: flex;
-  /* align-items: center; */
   justify-content: flex-start;
   
   .input-addon {
-    /* flex-basis: 14%; */
     min-width: 40px;
     background-color: white;
     height: 40px;
@@ -41,14 +37,10 @@ const StyledForm = styled.form`
     &:nth-child(4) {
       border-radius: 0% 50% 50% 0%;
     }
-    /* &:last-child {
-      background-color: red;
-    } */
   }
 
   input {
     flex: 1 1 auto;
-    /* flex-basis: 58%; */
     min-width: 0;
     appearance:none
     height: 40px;
@@ -56,8 +48,6 @@ const StyledForm = styled.form`
     background-color: #fff;
     font-size: 1em;
   }
-
-  
 `;
 
 const RecordIcon = styled.div`

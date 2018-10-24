@@ -15,7 +15,6 @@ const StyledListItem = styled.a`
 
 const ListItemAvatar = styled.div`
   flex-basis: 20%;
-  /* background-color: yellow; */
   padding-left: 10px;
   padding-right: 5px;
   img {
@@ -27,7 +26,6 @@ const ListItemAvatar = styled.div`
 
 const ListItemContent = styled.div`
   flex-basis: 80%;
-  /* border-bottom: 1px solid #e4e4e4; */
   padding-left: 13px;
   padding: 17px 15px 17px 0px;
 `;
@@ -86,21 +84,15 @@ type Props = {
 const StatusListItem = ({ title, preview, avatar }: Props) => (
   <StyledListItem>
     <ListItemAvatar>
-      {/* <pre>
-        <code>{JSON.stringify(status)}</code>
-      </pre> */}
       <img src={statusItems[0].avatar} alt={title} />
       <AddStatus>+</AddStatus>
     </ListItemAvatar>
     <ListItemContent>
       <ContentTopRow>
         <h4>{statusItems[0].title}</h4>
-        {/* <span>06-08-18</span> */}
-        {/* <span>🚀 🔥😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 </span> */}
       </ContentTopRow>
       <ContentBottomRow>
         <span>{statusItems[0].preview}</span>
-        {/* <span>icon</span> */}
       </ContentBottomRow>
     </ListItemContent>
   </StyledListItem>

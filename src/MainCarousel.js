@@ -34,9 +34,7 @@ const Slide = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  /* opacity: 1; */
   height: 100%;
-  /* opacity: 0; */
   transition: transform 0.2s;
   transform: translateX(${props => props.defaultPosition});
 `;

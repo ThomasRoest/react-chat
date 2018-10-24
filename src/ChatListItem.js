@@ -14,7 +14,6 @@ const StyledListItem = styled.a`
 
 const ListItemAvatar = styled.div`
   flex-basis: 20%;
-  /* background-color: yellow; */
   padding-left: 10px;
   padding-right: 5px;
   img {
@@ -79,11 +78,9 @@ const ChatListItem = ({ title, preview, avatar, showChatScreen }: Props) => (
       <ContentTopRow>
         <h4>{title}</h4>
         <span>06-08-18</span>
-        {/* <span>🚀 🔥😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 </span> */}
       </ContentTopRow>
       <ContentBottomRow>
         <span>{preview}</span>
-        {/* <span>icon</span> */}
       </ContentBottomRow>
     </ListItemContent>
   </StyledListItem>

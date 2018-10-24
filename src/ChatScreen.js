@@ -7,7 +7,6 @@ import ChatScreenFooter from "./ChatScreenFooter";
 import phone from "./images/phone.svg";
 import arrow from "./images/arrow-left2.svg";
 import video from "./images/video-camera.svg";
-// import "./chatscreen.css";
 
 const StyledChatScreen = styled.div`
   background-color: #ece5dd;
@@ -108,7 +107,6 @@ const ArrowRight = styled.div`
 `;
 
 const SettingsIcon = styled.div`
-  /* flex-basis: 10%; */
   display: flex;
   flex-direction: column;
   padding-right: 20px;
@@ -183,7 +181,6 @@ class ChatScreen extends Component<Props, State> {
   };
   render() {
     return (
-      // <div style={this.props.styles} className="chatscreen" ref={this.myRef}>
       <StyledChatScreen>
         <ChatScreenHeader>
           <ChatScreenHeaderLeft>
