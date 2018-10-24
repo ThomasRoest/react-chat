@@ -2,7 +2,7 @@ const chats = [
   {
     id: 64138,
     title: "Pete",
-    preview: "Hello there!",
+    preview: "Hey!",
     avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/gauchomatt/128.jpg",
     phrase1:
       "Use the primary RSS hard drive, then you can quantify the online card!",
@@ -20,7 +20,7 @@ const chats = [
   },
   {
     id: 64987,
-    title: "Yazmin Kuhlman",
+    title: "Yazmin Kuhlman 🚀 🔥",
     preview: "Quia fugiat sint inventore.",
     avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/romanbulah/128.jpg",
     phrase1:
@@ -38,7 +38,7 @@ const chats = [
   },
   {
     id: 64732,
-    title: "Catalina Krajcik",
+    title: "Catalina Krajcik😂😂",
     preview: "Eveniet praesentium qui est quia ea labore est.",
     avatar:
       "https://s3.amazonaws.com/uifaces/faces/twitter/muridrahhal/128.jpg",
@@ -65,7 +65,7 @@ const chats = [
   },
   {
     id: 50887,
-    title: "Patrick Miller",
+    title: "Patrick Miller😀",
     preview: "Dolorem ut voluptas officia nisi consequatur ab.",
     avatar:
       "https://s3.amazonaws.com/uifaces/faces/twitter/bartoszdawydzik/128.jpg",
@@ -95,7 +95,3 @@ const chats = [
 ];
 
 export { chats };
-
-// export default chats;
-
-/* <span>🚀 🔥😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 </span> */

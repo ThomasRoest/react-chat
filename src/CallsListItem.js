@@ -77,7 +77,6 @@ const CallsListItem = ({ title, preview, avatar }: Props) => (
       <ContentTopRow>
         <h4>{title}</h4>
         <span>06-08-18</span>
-        {/* <span>🚀 🔥😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 </span> */}
       </ContentTopRow>
       <ContentBottomRow>
         <span>{preview}</span>
