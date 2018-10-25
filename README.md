@@ -4,4 +4,4 @@ made with React & Styled components
 
 ## Screenshots
 
-<img src="public/screenshot1.png" alt="home" style="width: 350px">
+<img src="public/screenshot1.png" alt="home" style="max-width: 350px">
