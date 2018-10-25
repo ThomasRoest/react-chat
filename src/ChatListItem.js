@@ -2,8 +2,12 @@
 
 import React from "react";
 import styled from "styled-components";
+import { truncateString } from "./helpers";
 
 const StyledListItem = styled.a`
+  /* * {
+    outline: 1px solid lightblue;
+  } */
   background: #fafafa;
   display: flex;
   align-items: center;
@@ -49,16 +53,9 @@ const ContentTopRow = styled.div`
 const ContentBottomRow = styled.div`
   display: flex;
   justify-content: space-between;
-  span:first-child {
+  .preview {
     font-size: 0.9em;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 300px;
-    text-overflow: ellipsis;
-  }
-  span {
     color: #737373;
-    font-size: 0.8em;
   }
 `;
 
@@ -66,7 +63,8 @@ type Props = {
   title: string,
   preview: string,
   avatar: string,
-  showChatScreen: Function
+  showChatScreen: Function,
+  id: number
 };
 
 const ChatListItem = ({
@@ -86,7 +84,7 @@ const ChatListItem = ({
         <span>06-08-18</span>
       </ContentTopRow>
       <ContentBottomRow>
-        <span>{preview}</span>
+        <span className="preview">{truncateString(preview, 40)}</span>
       </ContentBottomRow>
     </ListItemContent>
   </StyledListItem>
