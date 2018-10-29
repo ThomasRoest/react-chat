@@ -1,7 +1,7 @@
 const chats = [
   {
     id: 64138,
-    title: "Pete",
+    title: "Pete 😎",
     preview: "Hey!",
     avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/gauchomatt/128.jpg"
   },

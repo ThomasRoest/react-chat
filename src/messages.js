@@ -61,7 +61,7 @@ const messages = [
   {
     id: 167,
     phrase1:
-      "I'll transmit the haptic ADP transmitter, that should firewall the USB hard drive!",
+      "I'll transmit the haptic ADP transmitter🤖 💩, that should firewall the USB hard drive!",
     status: "outgoing"
   },
   {
@@ -71,13 +71,13 @@ const messages = [
   },
   {
     id: 350,
-    phrase1: "Use the neural SMS pixel, then you can copy the haptic feed!",
+    phrase1: "Use the neural🔥, SMS pixel, then you can copy the haptic feed!",
     status: "outgoing"
   },
   {
     id: 2250,
     phrase1:
-      "Try to calculate the FTP driver, maybe it will synthesize the open-source capacitor!",
+      "Try to calculate the FTP driver😉, maybe it will synthesize the open-source capacitor!",
     status: "incoming"
   },
   {
@@ -101,12 +101,12 @@ const messages = [
   {
     id: 51630,
     phrase1:
-      "I'll connect the 1080p AI capacitor, that should microchip the RAM panel!",
+      "I'll connect the 1080p AI capacitor, that should microchip the RAM panel!🔥🔥",
     status: "incoming"
   },
   {
     id: 92113,
-    phrase1: "hello",
+    phrase1: "hello 😎",
     status: "outgoing"
   },
   {
@@ -118,3 +118,5 @@ const messages = [
 ];
 
 export { messages };
+
+// 😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 😋 😎 😍 😘
