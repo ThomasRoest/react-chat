@@ -8,7 +8,7 @@ const messages = [
   {
     id: 60930,
     phrase1:
-      "bypassTry to back up the IB circuit, maybe it will copy the bluetooth port!",
+      "Try to back up the IB circuit, maybe it will copy the bluetooth port!",
     status: "incoming"
   },
   {
@@ -31,7 +31,7 @@ const messages = [
   {
     id: 4534,
     phrase1:
-      "overridegenerating the sensor won't do anything, we need to program the neural USB transmitter!",
+      "generating the sensor won't do anything, we need to program the neural USB transmitter!",
     status: "incoming"
   },
   {
@@ -55,7 +55,7 @@ const messages = [
   {
     id: 20319,
     phrase1:
-      "synthesizeI'll compress the digital RAM card, that should bus the SSL program!",
+      "I'll compress the digital RAM card, that should bus the SSL program!",
     status: "incoming"
   },
   {
@@ -66,7 +66,7 @@ const messages = [
   },
   {
     id: 25454,
-    phrase1: "quantifyWe need to input the open-source HTTP driver!",
+    phrase1: "We need to input the open-source HTTP driver!",
     status: "incoming"
   },
   {
@@ -82,8 +82,7 @@ const messages = [
   },
   {
     id: 53854,
-    phrase1:
-      "backing up the circuit won't do anything, we need to override the multi-byte SDD array!",
+    phrase1: "try programming cutting-edge brand relationship👌 ",
     status: "outgoing"
   },
   {
@@ -106,9 +105,10 @@ const messages = [
   },
   {
     id: 92113,
-    phrase1: "hello 😎",
+    phrase1: "programming dot-com implement applications😎",
     status: "outgoing"
   },
+
   {
     id: 63181,
     phrase1:
