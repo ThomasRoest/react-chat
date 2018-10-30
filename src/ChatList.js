@@ -15,6 +15,8 @@ type Props = {
 };
 
 const ChatList = ({ showChatScreen }: Props) => {
+  // add search filter here
+
   return (
     <StyledList>
       {chats.map(item => (

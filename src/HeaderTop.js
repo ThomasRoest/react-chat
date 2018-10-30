@@ -19,12 +19,13 @@ const SearchBar = styled.div`
   flex: 0.5;
   display: flex;
   align-items: center;
-  transform-origin: bottom right;
+  transform-origin: 82%;
   background-color: white;
   border-radius: ${props => (props.isVisible === true ? "0px" : "35px")};
   transform: ${props => (props.isVisible === true ? "scaleX(1)" : "scaleX(0)")};
   transition: border-radius 0.4s, transform 0.4s;
   input[type="text"] {
+    border-radius: 35px;
     width: 90%;
     height: 60px;
     font-size: 1em;
@@ -104,7 +105,6 @@ class HeaderTop extends Component<null, State> {
         <Title>
           <h1>React Chat</h1>
         </Title>
-
         <SearchBar isVisible={this.state.searchInputIsvisible}>
           <img src={arrowLeft} alt="search" onClick={this.toggleSearchInput} />
           <input
