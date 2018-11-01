@@ -1,0 +1,28 @@
+//@flow
+
+import React from "react";
+import styled from "styled-components";
+
+const SearchResult = styled.p`
+  padding: 0 5px 0 5px;
+`;
+
+const Match = ({ children }) => (
+  <span style={{ color: "red", backgroundColor: "lightblue" }}>{children}</span>
+);
+
+export const HighlightMatches = ({ text, searchTerm }) => {
+  let keyCount = 0;
+  let splits = text.split(new RegExp(`\\b${searchTerm}\\b`, "ig"));
+  let matches = text.match(new RegExp(`\\b${searchTerm}\\b`, "ig"));
+  let result = [];
+
+  for (let i = 0; i < splits.length; ++i) {
+    result.push(splits[i]);
+    if (i < splits.length - 1) {
+      result.push(<Match key={++keyCount}>{matches[i]}</Match>);
+    }
+  }
+
+  return <SearchResult>{result}</SearchResult>;
+};

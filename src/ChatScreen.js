@@ -136,12 +136,12 @@ const ChatContent = styled.div`
   justify-content: flex-end;
 `;
 
-const ChatMessage = ({ status, phrase1 }) => {
+const ChatMessage = ({ status, content }) => {
   return (
     <StyledChatMessage status={status}>
       {status === "incoming" && <ArrowLeft />}
       <span>
-        {phrase1}
+        {content}
         <span>25:34</span>
       </span>
       {status === "outgoing" && <ArrowRight />}
@@ -174,7 +174,7 @@ class ChatScreen extends Component<Props, State> {
     const newMessages = [...this.state.messages];
     const message = {
       id: Date.now(),
-      phrase1: formvalue,
+      content: formvalue,
       status: "outgoing"
     };
     window.scrollTo(0, document.body.scrollHeight);

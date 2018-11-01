@@ -44,7 +44,7 @@ type Props = {
   showChatScreen: Function
 };
 
-const MainCarousel = ({ viewState, showChatScreen }: Props) => {
+const MainCarousel = ({ viewState, showChatScreen, searchTerm }: Props) => {
   let position;
   if (viewState === "1") {
     position = "0%";
@@ -60,7 +60,7 @@ const MainCarousel = ({ viewState, showChatScreen }: Props) => {
       <CarouselTrack goToSlide={position}>
         <Slide defaultPosition={"0%"}>Camera slide</Slide>
         <Slide defaultPosition={"100%"}>
-          <ChatList showChatScreen={showChatScreen} />
+          <ChatList searchTerm={searchTerm} showChatScreen={showChatScreen} />
         </Slide>
         <Slide defaultPosition={"200%"}>
           <StatusList />

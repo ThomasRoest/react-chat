@@ -35,7 +35,12 @@ class App extends React.Component<null, State> {
   state = {
     viewState: "2",
     chatScreenIsVisible: false,
-    currentChatId: null
+    currentChatId: null,
+    searchTerm: ""
+  };
+
+  handleSearchtermChange = event => {
+    this.setState({ searchTerm: event.target.value });
   };
 
   changeViewState = (event: SyntheticInputEvent<HTMLDataListElement>) => {
@@ -54,7 +59,10 @@ class App extends React.Component<null, State> {
   render() {
     return (
       <StyledApp>
-        <HeaderTop />
+        <HeaderTop
+          searchTerm={this.state.searchTerm}
+          handleSearchtermChange={this.handleSearchtermChange}
+        />
         <HeaderNav
           viewState={this.state.viewState}
           changeViewState={this.changeViewState}
@@ -62,6 +70,7 @@ class App extends React.Component<null, State> {
         <MainCarousel
           showChatScreen={this.showChatScreen}
           viewState={this.state.viewState}
+          searchTerm={this.state.searchTerm}
         />
 
         {this.state.chatScreenIsVisible && (

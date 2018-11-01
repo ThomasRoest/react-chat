@@ -80,18 +80,12 @@ const SettingsIcon = styled.div`
 `;
 
 type State = {
-  searchTerm: string,
   searchInputIsvisible: boolean
 };
 
 class HeaderTop extends Component<null, State> {
   state = {
-    searchTerm: "",
     searchInputIsvisible: false
-  };
-
-  handleSearchTermChange = event => {
-    this.setState({ searchTerm: event.target.value });
   };
 
   toggleSearchInput = () => {
@@ -110,8 +104,8 @@ class HeaderTop extends Component<null, State> {
           <input
             type="text"
             placeholder="Search..."
-            onChange={this.handleSearchTermChange}
-            value={this.state.searchTerm}
+            onChange={this.props.handleSearchtermChange}
+            value={this.props.searchTerm}
           />
         </SearchBar>
 
