@@ -8,13 +8,18 @@ const SearchResult = styled.p`
 `;
 
 const Match = ({ children }) => (
-  <span style={{ color: "red", backgroundColor: "lightblue" }}>{children}</span>
+  <span style={{ color: "#32AFFF", fontWeight: "bold" }}>{children}</span>
 );
 
-export const HighlightMatches = ({ text, searchTerm }) => {
+type Props = {
+  text: string,
+  searchTerm: string
+};
+
+export const HighlightMatches = ({ text, searchTerm }: Props) => {
   let keyCount = 0;
-  let splits = text.split(new RegExp(`\\b${searchTerm}\\b`, "ig"));
-  let matches = text.match(new RegExp(`\\b${searchTerm}\\b`, "ig"));
+  let splits = text.split(new RegExp(searchTerm, "ig"));
+  let matches = text.match(new RegExp(searchTerm, "ig"));
   let result = [];
 
   for (let i = 0; i < splits.length; ++i) {
