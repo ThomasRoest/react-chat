@@ -41,7 +41,8 @@ const Slide = styled.div`
 
 type Props = {
   viewState: string,
-  showChatScreen: Function
+  showChatScreen: Function,
+  searchTerm: string
 };
 
 const MainCarousel = ({ viewState, showChatScreen, searchTerm }: Props) => {

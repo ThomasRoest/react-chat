@@ -83,24 +83,25 @@ type State = {
   searchInputIsvisible: boolean
 };
 
-class HeaderTop extends Component<null, State> {
-  state = {
-    searchInputIsvisible: false
-  };
+type Props = {
+  handleSearchtermChange: Function,
+  searchTerm: string
+};
 
-  toggleSearchInput = () => {
-    this.setState(prevState => ({
-      searchInputIsvisible: !prevState.searchInputIsvisible
-    }));
-  };
+class HeaderTop extends Component<Props, State> {
   render() {
+    console.log(this.props.searchInputIsvisible);
     return (
       <StyledHeaderTop>
         <Title>
           <h1>React Chat</h1>
         </Title>
-        <SearchBar isVisible={this.state.searchInputIsvisible}>
-          <img src={arrowLeft} alt="search" onClick={this.toggleSearchInput} />
+        <SearchBar isVisible={this.props.searchInputIsvisible}>
+          <img
+            src={arrowLeft}
+            alt="search"
+            onClick={this.props.closeSearchInput}
+          />
           <input
             type="text"
             placeholder="Search..."
@@ -110,7 +111,7 @@ class HeaderTop extends Component<null, State> {
         </SearchBar>
 
         <SearchIcon>
-          <img src={search} alt="search" onClick={this.toggleSearchInput} />
+          <img src={search} alt="search" onClick={this.props.showSearchInput} />
         </SearchIcon>
         <SettingsIcon>
           <span />

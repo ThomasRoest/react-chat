@@ -28,7 +28,9 @@ const StyledApp = styled.div`
 type State = {
   viewState: string,
   chatScreenIsVisible: boolean,
-  currentChatId: ?number
+  currentChatId: ?number,
+  searchTerm: string,
+  searchInputIsvisible: boolean
 };
 
 class App extends React.Component<null, State> {
@@ -36,10 +38,19 @@ class App extends React.Component<null, State> {
     viewState: "2",
     chatScreenIsVisible: false,
     currentChatId: null,
-    searchTerm: ""
+    searchTerm: "",
+    searchInputIsvisible: false
   };
 
-  handleSearchtermChange = event => {
+  showSearchInput = () => {
+    this.setState({ searchInputIsvisible: true, viewState: "2" });
+  };
+
+  closeSearchInput = () => {
+    this.setState({ searchInputIsvisible: false, searchTerm: "" });
+  };
+
+  handleSearchtermChange = (event: SyntheticInputEvent<HTMLInputElement>) => {
     this.setState({ searchTerm: event.target.value });
   };
 
@@ -48,7 +59,7 @@ class App extends React.Component<null, State> {
     this.setState({ viewState: newState });
   };
 
-  showChatScreen = id => {
+  showChatScreen = (id: number) => {
     this.setState({ chatScreenIsVisible: true, currentChatId: id });
   };
 
@@ -62,6 +73,9 @@ class App extends React.Component<null, State> {
         <HeaderTop
           searchTerm={this.state.searchTerm}
           handleSearchtermChange={this.handleSearchtermChange}
+          showSearchInput={this.showSearchInput}
+          closeSearchInput={this.closeSearchInput}
+          searchInputIsvisible={this.state.searchInputIsvisible}
         />
         <HeaderNav
           viewState={this.state.viewState}

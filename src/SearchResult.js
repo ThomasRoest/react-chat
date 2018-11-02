@@ -2,7 +2,12 @@
 import React from "react";
 import { HighlightMatches } from "./Highlight";
 
-const SearchResult = ({ content, searchTerm }) => {
+type Props = {
+  content: string,
+  searchTerm: string
+};
+
+const SearchResult = ({ content, searchTerm }: Props) => {
   return (
     <div>
       <HighlightMatches text={content} searchTerm={searchTerm} />

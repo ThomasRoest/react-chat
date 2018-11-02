@@ -28,6 +28,5 @@ export const HighlightMatches = ({ text, searchTerm }: Props) => {
       result.push(<Match key={++keyCount}>{matches[i]}</Match>);
     }
   }
-
   return <SearchResult>{result}</SearchResult>;
 };
