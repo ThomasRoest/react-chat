@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import CallsListItem from "./CallsListItem";
-import { calls } from "./calls";
+import { calls } from "./data/calls";
 
 const StyledList = styled.div`
   padding: 0;

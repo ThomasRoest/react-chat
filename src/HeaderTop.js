@@ -85,12 +85,14 @@ type State = {
 
 type Props = {
   handleSearchtermChange: Function,
-  searchTerm: string
+  searchTerm: string,
+  searchInputIsvisible: boolean,
+  showSearchInput: boolean,
+  closeSearchInput: Function
 };
 
 class HeaderTop extends Component<Props, State> {
   render() {
-    console.log(this.props.searchInputIsvisible);
     return (
       <StyledHeaderTop>
         <Title>

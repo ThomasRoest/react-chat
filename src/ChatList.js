@@ -4,8 +4,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import ChatListItem from "./ChatListItem";
 import SearchResult from "./SearchResult";
-import { chats } from "./chats.js";
-import { messages } from "./messages.js";
+import { chats } from "./data/chats.js";
+import { messages } from "./data/messages.js";
 
 const StyledList = styled.ul`
   padding: 0;

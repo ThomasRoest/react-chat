@@ -28,7 +28,7 @@ const StyledApp = styled.div`
 type State = {
   viewState: string,
   chatScreenIsVisible: boolean,
-  currentChatId: ?number,
+  currentChatId: number,
   searchTerm: string,
   searchInputIsvisible: boolean
 };
@@ -37,7 +37,7 @@ class App extends React.Component<null, State> {
   state = {
     viewState: "2",
     chatScreenIsVisible: false,
-    currentChatId: null,
+    currentChatId: 0,
     searchTerm: "",
     searchInputIsvisible: false
   };
@@ -64,7 +64,7 @@ class App extends React.Component<null, State> {
   };
 
   closeChatScreen = () => {
-    this.setState({ chatScreenIsVisible: false, currentChatId: null });
+    this.setState({ chatScreenIsVisible: false, currentChatId: 0 });
   };
 
   render() {

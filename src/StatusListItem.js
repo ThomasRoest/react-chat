@@ -2,7 +2,7 @@
 
 import React from "react";
 import styled from "styled-components";
-import { statusItems } from "./statusItems.js";
+import { statusItems } from "./data/statusItems.js";
 
 const StyledListItem = styled.a`
   background: #fafafa;
