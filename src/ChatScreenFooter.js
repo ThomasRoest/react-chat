@@ -108,12 +108,17 @@ class ChatScreenFooter extends Component<Props, State> {
     this.props.addMessage(this.state.formValue);
     this.setState({ formValue: "" });
   };
+
+  addEmoji = () => {
+    this.setState({ formValue: "😎" });
+  };
+
   render() {
     return (
       <StyledChatScreenFooter>
         <StyledForm onSubmit={this.handleSubmit}>
           <span className="input-addon">
-            <img src={happy} alt="" />
+            <img src={happy} alt="" onClick={this.addEmoji} />
           </span>
           <input
             type="text"

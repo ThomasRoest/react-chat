@@ -29,7 +29,7 @@ const ChatContent = styled.div`
 `;
 
 type State = {
-  messages: Array<string>
+  messages: Array<Object>
 };
 
 type Props = {
@@ -60,6 +60,7 @@ class ChatScreen extends Component<Props, State> {
     window.scrollTo(0, document.body.scrollHeight);
     this.setState({ messages: newMessages.concat(message) });
   };
+
   render() {
     let msg;
     if (this.props.currentChatId) {
@@ -75,7 +76,11 @@ class ChatScreen extends Component<Props, State> {
         />
         <ChatContent>
           {this.state.messages.map(item => (
-            <ChatMessage key={item.id} {...item} />
+            <ChatMessage
+              key={item.id}
+              content={item.content}
+              status={item.status}
+            />
           ))}
         </ChatContent>
         <ChatScreenFooter addMessage={this.addmessage} />

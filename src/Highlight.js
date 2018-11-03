@@ -16,7 +16,7 @@ type Props = {
   searchTerm: string
 };
 
-export const HighlightMatches = ({ text, searchTerm }: Props) => {
+const Highlight = ({ text, searchTerm }: Props) => {
   let keyCount = 0;
   let splits = text.split(new RegExp(searchTerm, "ig"));
   let matches = text.match(new RegExp(searchTerm, "ig"));
@@ -30,3 +30,5 @@ export const HighlightMatches = ({ text, searchTerm }: Props) => {
   }
   return <SearchResult>{result}</SearchResult>;
 };
+
+export default Highlight;

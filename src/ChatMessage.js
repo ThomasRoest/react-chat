@@ -1,3 +1,5 @@
+//@flow
+
 import React from "react";
 import styled from "styled-components";
 
@@ -43,7 +45,12 @@ const StyledChatMessage = styled.div`
   }
 `;
 
-const ChatMessage = ({ status, content }) => {
+type Props = {
+  status: string,
+  content: string
+};
+
+const ChatMessage = ({ status, content }: Props) => {
   return (
     <StyledChatMessage status={status}>
       {status === "incoming" && <ArrowLeft />}

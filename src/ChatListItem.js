@@ -5,9 +5,6 @@ import styled from "styled-components";
 import { truncateString } from "./helpers";
 
 const StyledListItem = styled.a`
-  /* * {
-    outline: 1px solid lightblue;
-  } */
   background: #fafafa;
   display: flex;
   align-items: center;

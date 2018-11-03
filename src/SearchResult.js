@@ -1,6 +1,6 @@
 //@flow
 import React from "react";
-import { HighlightMatches } from "./Highlight";
+import Highlight from "./Highlight";
 
 type Props = {
   content: string,
@@ -10,7 +10,7 @@ type Props = {
 const SearchResult = ({ content, searchTerm }: Props) => {
   return (
     <div>
-      <HighlightMatches text={content} searchTerm={searchTerm} />
+      <Highlight text={content} searchTerm={searchTerm} />
     </div>
   );
 };

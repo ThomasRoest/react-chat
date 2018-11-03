@@ -95,7 +95,6 @@ const ChatScreenHeader = ({ msg, closeChatScreen }: Props) => {
         <a>
           <img src={phone} alt="phone icon" />
         </a>
-
         <SettingsIcon>
           <span />
           <span />

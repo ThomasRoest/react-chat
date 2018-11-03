@@ -1,6 +1,6 @@
 //@flow
 
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import search from "./images/search.svg";
 import arrowLeft from "./images/arrow-left2-2.svg";
@@ -23,7 +23,7 @@ const SearchBar = styled.div`
   background-color: white;
   border-radius: ${props => (props.isVisible === true ? "0px" : "35px")};
   transform: ${props => (props.isVisible === true ? "scaleX(1)" : "scaleX(0)")};
-  transition: border-radius 0.4s, transform 0.4s;
+  transition: border-radius 0.3s, transform 0.3s;
   input[type="text"] {
     border-radius: 35px;
     width: 90%;
@@ -79,50 +79,45 @@ const SettingsIcon = styled.div`
   }
 `;
 
-type State = {
-  searchInputIsvisible: boolean
-};
-
 type Props = {
   handleSearchtermChange: Function,
   searchTerm: string,
   searchInputIsvisible: boolean,
-  showSearchInput: boolean,
+  showSearchInput: Function,
   closeSearchInput: Function
 };
 
-class HeaderTop extends Component<Props, State> {
-  render() {
-    return (
-      <StyledHeaderTop>
-        <Title>
-          <h1>React Chat</h1>
-        </Title>
-        <SearchBar isVisible={this.props.searchInputIsvisible}>
-          <img
-            src={arrowLeft}
-            alt="search"
-            onClick={this.props.closeSearchInput}
-          />
-          <input
-            type="text"
-            placeholder="Search..."
-            onChange={this.props.handleSearchtermChange}
-            value={this.props.searchTerm}
-          />
-        </SearchBar>
-
-        <SearchIcon>
-          <img src={search} alt="search" onClick={this.props.showSearchInput} />
-        </SearchIcon>
-        <SettingsIcon>
-          <span />
-          <span />
-          <span />
-        </SettingsIcon>
-      </StyledHeaderTop>
-    );
-  }
-}
+const HeaderTop = ({
+  searchInputIsvisible,
+  closeSearchInput,
+  handleSearchtermChange,
+  searchTerm,
+  showSearchInput
+}: Props) => {
+  return (
+    <StyledHeaderTop>
+      <Title>
+        <h1>React Chat</h1>
+      </Title>
+      <SearchBar isVisible={searchInputIsvisible}>
+        <img src={arrowLeft} alt="search" onClick={closeSearchInput} />
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={handleSearchtermChange}
+          value={searchTerm}
+        />
+      </SearchBar>
+      <SearchIcon onClick={showSearchInput}>
+        <img src={search} alt="search" />
+      </SearchIcon>
+      <SettingsIcon>
+        <span />
+        <span />
+        <span />
+      </SettingsIcon>
+    </StyledHeaderTop>
+  );
+};
 
 export default HeaderTop;
