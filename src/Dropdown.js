@@ -7,7 +7,7 @@ const StyledDropdown = styled.div`
   position: absolute;
   box-shadow: 0px 3px 3px grey;
   transform: ${props => (props.visible ? "scale(1)" : "scale(0)")};
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
   transform-origin: top right;
   height: 30%;
   width: 50%;
