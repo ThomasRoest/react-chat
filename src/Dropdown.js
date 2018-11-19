@@ -42,9 +42,7 @@ const Dropdown = ({ dropdownIsVisible, toggleDropdown }) => {
       <button onClick={toggleDropdown}>close</button>
       <p>
         Hi!, thanks for checking out this project! You can find it on&nbsp;
-        <a href="https://github.com/ThomasRoest/better-bookmarks">
-          Github here.
-        </a>
+        <a href="https://github.com/ThomasRoest/react-chat">Github here.</a>
       </p>
 
       <p>
