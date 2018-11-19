@@ -4,6 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import search from "./images/search.svg";
 import arrowLeft from "./images/arrow-left2-2.svg";
+import Dropdown from "./Dropdown";
 
 const StyledHeaderTop = styled.div`
   background-color: #075e54;
@@ -77,6 +78,9 @@ const SettingsIcon = styled.div`
     border-radius: 50%;
     display: block;
   }
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 type Props = {
@@ -92,7 +96,9 @@ const HeaderTop = ({
   closeSearchInput,
   handleSearchtermChange,
   searchTerm,
-  showSearchInput
+  showSearchInput,
+  toggleDropdown,
+  dropdownIsVisible
 }: Props) => {
   return (
     <StyledHeaderTop>
@@ -111,11 +117,15 @@ const HeaderTop = ({
       <SearchIcon onClick={showSearchInput}>
         <img src={search} alt="search" />
       </SearchIcon>
-      <SettingsIcon>
+      <SettingsIcon onClick={toggleDropdown}>
         <span />
         <span />
         <span />
       </SettingsIcon>
+      <Dropdown
+        toggleDropdown={toggleDropdown}
+        dropdownIsVisible={dropdownIsVisible}
+      />
     </StyledHeaderTop>
   );
 };

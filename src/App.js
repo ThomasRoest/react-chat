@@ -30,7 +30,8 @@ type State = {
   chatScreenIsVisible: boolean,
   currentChatId: number,
   searchTerm: string,
-  searchInputIsvisible: boolean
+  searchInputIsvisible: boolean,
+  dropdownIsVisible: boolean
 };
 
 class App extends React.Component<null, State> {
@@ -39,7 +40,8 @@ class App extends React.Component<null, State> {
     chatScreenIsVisible: false,
     currentChatId: 0,
     searchTerm: "",
-    searchInputIsvisible: false
+    searchInputIsvisible: false,
+    dropdownIsVisible: false
   };
 
   showSearchInput = () => {
@@ -67,6 +69,12 @@ class App extends React.Component<null, State> {
     this.setState({ chatScreenIsVisible: false, currentChatId: 0 });
   };
 
+  toggleDropdown = () => {
+    this.setState(prevState => {
+      return { dropdownIsVisible: !prevState.dropdownIsVisible };
+    });
+  };
+
   render() {
     return (
       <StyledApp>
@@ -76,6 +84,8 @@ class App extends React.Component<null, State> {
           showSearchInput={this.showSearchInput}
           closeSearchInput={this.closeSearchInput}
           searchInputIsvisible={this.state.searchInputIsvisible}
+          toggleDropdown={this.toggleDropdown}
+          dropdownIsVisible={this.state.dropdownIsVisible}
         />
         <HeaderNav
           viewState={this.state.viewState}
