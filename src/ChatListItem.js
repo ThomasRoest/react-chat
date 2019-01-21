@@ -28,7 +28,6 @@ const ListItemAvatar = styled.div`
     &:hover {
       cursor: pointer;
     }
-    /* check temp js */
   }
 `;
 
@@ -44,8 +43,6 @@ const StyledContactDetail = styled.div`
 `;
 
 const UserDetail = styled.div`
-  /* div */
-  /* padding: 10px; */
   height: 50%;
   width: 40%;
   background-color: white;
@@ -58,13 +55,6 @@ const UserDetail = styled.div`
     display: flex;
   }
 `;
-
-/* display: ${props => (props.isVisible === true ? "0px" : "35px")}; */
-
-// background-color: white;
-//   border-radius: ${props => (props.isVisible === true ? "0px" : "35px")};
-//   transform: ${props => (props.isVisible === true ? "scaleX(1)" : "scaleX(0)")};
-//   transition: border-radius 0.3s, transform 0.3s;
 
 const ListItemContent = styled.div`
   flex-basis: 80%;

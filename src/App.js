@@ -102,6 +102,7 @@ class App extends React.Component<null, State> {
           from={{ opacity: 0 }}
           enter={{ opacity: 1 }}
           leave={{ opacity: 0 }}
+          config={{ duration: 200 }}
         >
           {show =>
             show &&
@@ -119,7 +120,6 @@ class App extends React.Component<null, State> {
           currentChatId={this.state.currentChatId}
           closeChatScreen={this.closeChatScreen}
         /> */}
-        {/* )} */}
       </StyledApp>
     );
   }
