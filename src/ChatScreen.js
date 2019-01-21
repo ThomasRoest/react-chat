@@ -69,7 +69,7 @@ class ChatScreen extends Component<Props, State> {
       msg = chats.find(item => item.id === 64138);
     }
     return (
-      <StyledChatScreen>
+      <StyledChatScreen style={this.props.style}>
         <ChatScreenHeader
           msg={msg}
           closeChatScreen={this.props.closeChatScreen}

@@ -7,6 +7,7 @@ import HeaderNav from "./HeaderNav";
 import HeaderTop from "./HeaderTop";
 import MainCarousel from "./MainCarousel";
 import ChatScreen from "./ChatScreen";
+import { Transition } from "react-spring";
 
 injectGlobal`
    *, *:before, *:after {
@@ -96,13 +97,29 @@ class App extends React.Component<null, State> {
           viewState={this.state.viewState}
           searchTerm={this.state.searchTerm}
         />
-
-        {this.state.chatScreenIsVisible && (
-          <ChatScreen
-            currentChatId={this.state.currentChatId}
-            closeChatScreen={this.closeChatScreen}
-          />
-        )}
+        <Transition
+          items={this.state.chatScreenIsVisible}
+          from={{ opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}
+        >
+          {show =>
+            show &&
+            (props => (
+              <ChatScreen
+                style={props}
+                currentChatId={this.state.currentChatId}
+                closeChatScreen={this.closeChatScreen}
+              />
+            ))
+          }
+        </Transition>
+        {/* {this.state.chatScreenIsVisible && ( */}
+        {/* <ChatScreen
+          currentChatId={this.state.currentChatId}
+          closeChatScreen={this.closeChatScreen}
+        /> */}
+        {/* )} */}
       </StyledApp>
     );
   }
