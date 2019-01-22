@@ -34,7 +34,8 @@ type State = {
 
 type Props = {
   closeChatScreen: Function,
-  currentChatId: number
+  currentChatId: number,
+  style: Object
 };
 
 class ChatScreen extends Component<Props, State> {

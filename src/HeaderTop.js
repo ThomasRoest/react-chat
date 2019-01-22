@@ -88,7 +88,9 @@ type Props = {
   searchTerm: string,
   searchInputIsvisible: boolean,
   showSearchInput: Function,
-  closeSearchInput: Function
+  closeSearchInput: Function,
+  toggleDropdown: Function,
+  dropdownIsVisible: boolean
 };
 
 const HeaderTop = ({

@@ -25,24 +25,34 @@ const ArrowRight = styled.div`
 
 const StyledChatMessage = styled.div`
   display: flex;
+  animation: fadeIn .3s linear ;
   justify-content: ${props =>
     props.status === "incoming" ? "flex-start" : "flex-end"};
-  span {
-    background-color: ${props =>
-      props.status === "incoming" ? "#fff" : "#dcf8c6"};
-    margin-top: 7px;
-    max-width: 75%;
-    border-radius: ${props =>
-      props.status === "incoming" ? "0px 3px 3px 3px" : "3px 0px 3px 3px"};
-    padding: 5px;
     span {
-      padding: 0 0 0 8px;
-      color: #858B90;
-      float: right;
-      font-size: .8em;
+      background-color: ${props =>
+        props.status === "incoming" ? "#fff" : "#dcf8c6"};
+      margin-top: 7px;
+      max-width: 75%;
+      border-radius: ${props =>
+        props.status === "incoming" ? "0px 3px 3px 3px" : "3px 0px 3px 3px"};
+      padding: 5px;
+      span {
+        padding: 0 0 0 8px;
+        color: #858B90;
+        float: right;
+        font-size: .8em;
+      }
     }
   }
+  @keyframes fadeIn {
+    0%, 20% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
+  
 `;
 
 type Props = {
