@@ -2,6 +2,10 @@
 
 import React from "react";
 import styled from "styled-components";
+import phone2 from "./images/phone2.svg";
+import messageSquare from "./images/message-square.svg";
+import video from "./images/video.svg";
+import info from "./images/info.svg";
 import { truncateString } from "./helpers";
 import { Transition } from "react-spring";
 
@@ -33,18 +37,19 @@ const ListItemAvatar = styled.div`
 
 const StyledContactDetail = styled.div`
   background-color: rgba(0, 0, 0, 0.6);
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 500px;
   top: 0;
-  right: 0;
+  height: 100%;
   display: flex;
   justify-content: center;
+  z-index: 9999;
 `;
 
 const UserDetail = styled.div`
-  height: 50%;
-  width: 40%;
+  width: 60%;
+  max-height: 300px;
   background-color: white;
 
   img {
@@ -52,6 +57,9 @@ const UserDetail = styled.div`
   }
 
   div {
+    padding: 10px;
+    margin: 0;
+    background-color: white;
     display: flex;
   }
 `;
@@ -93,8 +101,10 @@ const ContactDetail = ({ avatar, title, style, toggleAvatar }) => (
     <UserDetail>
       <img src={avatar} alt={title} />
       <div>
-        <span>icon 1</span>
-        <span>icon 2</span>
+        <img src={phone2} alt="call" />
+        <img src={messageSquare} alt="message" />
+        <img src={video} alt="video" />
+        <img src={info} alt="info" />
       </div>
     </UserDetail>
   </StyledContactDetail>
@@ -134,6 +144,7 @@ class ChatListItem extends React.Component<Props, State> {
           from={{ opacity: 0 }}
           enter={{ opacity: 1 }}
           leave={{ opacity: 0 }}
+          config={{ duration: 100 }}
         >
           {show =>
             show &&
