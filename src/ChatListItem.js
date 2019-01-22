@@ -61,6 +61,10 @@ const UserDetail = styled.div`
     margin: 0;
     background-color: white;
     display: flex;
+    justify-content: space-between;
+    img {
+      max-width: 30px;
+    }
   }
 `;
 
