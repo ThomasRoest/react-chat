@@ -1,7 +1,7 @@
 //@flow
 
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import phone2 from "./images/phone2.svg";
 import messageSquare from "./images/message-square.svg";
 import video from "./images/video.svg";
@@ -25,13 +25,33 @@ const ListItemAvatar = styled.div`
   flex-basis: 20%;
   padding-left: 10px;
   padding-right: 5px;
+
   img {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    &:hover {
-      cursor: pointer;
-    }
+    border-radius: ${props => (props.avatarIsOpen ? "0%" : "50%")};
+    transition: transform 1s ease;
+  }
+  ${props =>
+    props.avatarIsOpen &&
+    css`
+      transform: scale(5) translate(50%, 20px);
+      transition: transform 0.5s ease;
+      z-index: 9999;
+    `}
+`;
+
+const UserIcons = styled.div`
+  background-color: white;
+  display: ${props => (props.avatarIsOpen ? "flex" : "none")};
+  justify-content: space-around;
+  /* all scaled */
+  margin: 0;
+  padding: 2px;
+  width: 50px;
+  img {
+    max-width: 5px;
+    max-height: 5px;
   }
 `;
 
@@ -44,28 +64,6 @@ const StyledContactDetail = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
-  z-index: 9999;
-`;
-
-const UserDetail = styled.div`
-  width: 60%;
-  max-height: 300px;
-  background-color: white;
-
-  img {
-    width: 100%;
-  }
-
-  div {
-    padding: 10px;
-    margin: 0;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    img {
-      max-width: 30px;
-    }
-  }
 `;
 
 const ListItemContent = styled.div`
@@ -100,18 +98,8 @@ const ContentBottomRow = styled.div`
   }
 `;
 
-const ContactDetail = ({ avatar, title, style, toggleAvatar }) => (
-  <StyledContactDetail style={style} onClick={toggleAvatar}>
-    <UserDetail>
-      <img src={avatar} alt={title} />
-      <div>
-        <img src={phone2} alt="call" />
-        <img src={messageSquare} alt="message" />
-        <img src={video} alt="video" />
-        <img src={info} alt="info" />
-      </div>
-    </UserDetail>
-  </StyledContactDetail>
+const ContactDetailOverlay = ({ avatar, title, style, toggleAvatar }) => (
+  <StyledContactDetail style={style} onClick={toggleAvatar} />
 );
 
 type Props = {
@@ -140,11 +128,10 @@ class ChatListItem extends React.Component<Props, State> {
 
   render() {
     const { id, title, preview, avatar, showChatScreen } = this.props;
-    const show = this.state.avatarIsOpen;
     return (
       <StyledListItem>
         <Transition
-          items={show}
+          items={this.state.avatarIsOpen}
           from={{ opacity: 0 }}
           enter={{ opacity: 1 }}
           leave={{ opacity: 0 }}
@@ -153,7 +140,7 @@ class ChatListItem extends React.Component<Props, State> {
           {show =>
             show &&
             (props => (
-              <ContactDetail
+              <ContactDetailOverlay
                 title={title}
                 avatar={avatar}
                 style={props}
@@ -163,8 +150,17 @@ class ChatListItem extends React.Component<Props, State> {
           }
         </Transition>
 
-        <ListItemAvatar onClick={this.toggleAvatar}>
+        <ListItemAvatar
+          onClick={this.toggleAvatar}
+          avatarIsOpen={this.state.avatarIsOpen}
+        >
           <img src={avatar} alt={title} />
+          <UserIcons avatarIsOpen={this.state.avatarIsOpen}>
+            <img src={phone2} alt="call" />
+            <img src={messageSquare} alt="message" />
+            <img src={video} alt="video" />
+            <img src={info} alt="info" />
+          </UserIcons>
         </ListItemAvatar>
         <ListItemContent onClick={() => showChatScreen(id)}>
           <ContentTopRow>
