@@ -35,7 +35,7 @@ const ListItemAvatar = styled.div`
   ${props =>
     props.avatarIsOpen &&
     css`
-      transform: scale(5) translate(50%, 20px);
+      transform: scale(5) translate(45%, 20px);
       transition: transform 0.5s ease;
       z-index: 9999;
     `}
@@ -123,7 +123,6 @@ class ChatListItem extends React.Component<Props, State> {
     this.setState(prevState => ({
       avatarIsOpen: !prevState.avatarIsOpen
     }));
-    console.log(this.state);
   };
 
   render() {
