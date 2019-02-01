@@ -30,12 +30,13 @@ const ListItemAvatar = styled.div`
     width: 50px;
     height: 50px;
     border-radius: ${props => (props.avatarIsOpen ? "0%" : "50%")};
+
     transition: transform 1s ease;
   }
   ${props =>
     props.avatarIsOpen &&
     css`
-      transform: scale(5) translate(45%, 20px);
+      transform: scale(5) translate(50%, 20px);
       transition: transform 0.5s ease;
       z-index: 9999;
     `}
@@ -46,7 +47,7 @@ const UserIcons = styled.div`
   display: ${props => (props.avatarIsOpen ? "flex" : "none")};
   justify-content: space-around;
   /* all scaled */
-  margin: 0;
+  margin-top: ${props => (props.avatarIsOpen ? "-5px" : "0px")};
   padding: 2px;
   width: 50px;
   img {
